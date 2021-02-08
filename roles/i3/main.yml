@@ -6,7 +6,8 @@
       - i3-wm
       - i3lock
       - i3status
-      - dmenu
+      - rofi
+      - dunst
   become: true
 
 
