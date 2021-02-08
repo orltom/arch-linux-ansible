@@ -1,0 +1,19 @@
+name: check
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: lint
+        uses: ansible/ansible-lint-action@master
+        with:
+          targets: 'site.yml'
+      - name: ansible check with archlinux:latest
+        uses: roles-ansible/check-ansible-archlinux-latest-action@master
+        with:
+          targets: 'site.yml'
+          group: 'all'
+          hosts: 'localhost'
