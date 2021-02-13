@@ -1,5 +1,5 @@
-# setup-workstation
-arch linux developer workstation setup with ansible
+# Setup Workstation
+Arch linux developer workstation setup with ansible.
 
 ## Prerequisite
 * python
