@@ -1,0 +1,34 @@
+---
+- name: install core packages
+  pacman:
+    name:
+    - yay
+    - vim
+    - git
+    - tig
+    - meld
+    - diffutils
+    - unzip
+    - tar
+    - coreutils
+    - python3
+  become: true
+
+- name: Install browser tools
+  become: yes
+  package:
+    name:
+    - httpie
+    - firefox
+  become: true  
+
+- name: Install network tools
+  become: yes
+  package:
+    name:
+      - wireshark
+      - networkmanager
+      - openvpn
+      - ufw
+      - gufw
+  become: true

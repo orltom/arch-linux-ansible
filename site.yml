@@ -3,4 +3,8 @@
   connection: local
   roles:
     - pacman
+    - core
     - i3
+    - container
+    - intellij
+

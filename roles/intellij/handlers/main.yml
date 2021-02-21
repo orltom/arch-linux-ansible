@@ -1,0 +1,5 @@
+---
+- name: reload sysctl
+  become: yes
+  command: sysctl -p
+  when: systctl.changed

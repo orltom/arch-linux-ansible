@@ -6,8 +6,22 @@
       - i3-wm
       - i3lock
       - i3status
+      - xfce4-settings
       - rofi
       - dunst
   become: true
+
+- name: Install network tools
+  become: yes
+  pacman:
+    name:
+      - wireshark-qt
+      - tcpdump
+      - netcat-openbsd
+      - iftop
+    state: present
+  tags:
+    - system
+
 
 

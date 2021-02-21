@@ -1,0 +1,10 @@
+---
+- name: install container software
+  pacman:
+    name:
+    - docker
+    - docker-compose
+    - minikube
+    - kubectl
+    - helm
+  become: true
