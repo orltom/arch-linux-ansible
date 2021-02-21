@@ -2,8 +2,8 @@
 Arch linux developer workstation setup with ansible.
 
 ## Prerequisite
-* python
-* ansible
+* Python
+* Ansible
 
 ## Disclaimer
 This software is provided as source code under an Apache 2.0 license.
