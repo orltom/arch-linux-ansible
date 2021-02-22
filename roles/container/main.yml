@@ -4,6 +4,8 @@
     name:
     - docker
     - docker-compose
+    - virtualbox
+    - linux-headers
     - minikube
     - kubectl
     - helm
