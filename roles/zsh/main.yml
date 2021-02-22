@@ -1,0 +1,54 @@
+---
+- name: Install zsh and extensions
+  become: yes
+  pacman:
+    name:
+      - zsh
+      - powerline
+      - python-powerline
+      - powerline-fonts
+      - awesome-terminal-fonts
+    state: present
+  tags:
+    - system
+
+- name: check if ZSH exists
+  stat:
+    path: /usr/bin/zsh
+  register: zsh_path
+  tags:
+    - system
+
+- name: set ZSH as default terminal
+  become: yes
+  shell: chsh -s $(which zsh)
+  when: zsh_path.stat.exists
+  tags:
+    - system
+
+- name: check if ohmyzsh directory exists
+  stat:
+    path: "{{ home_directory }}/.oh-my-zsh"
+  register: ohmyzsh_directory
+  tags:
+    - system
+
+- name: clone omyzsh
+  git:
+    repo: "https://github.com/ohmyzsh/ohmyzsh.git"
+    dest: "{{ home_directory }}/.oh-my-zsh"
+    refspec: "+refs/pull/*:refs/heads/*"
+    version: master
+  when: not ohmyzsh_directory.stat.exists
+  tags:
+    - system
+
+- name: clone powerline
+  git:
+    repo: "https://github.com/bhilburn/powerlevel9k.git"
+    dest: "{{ home_directory }}/.oh-my-zsh/custom/themes/powerlevel9k"
+    refspec: "+refs/pull/*:refs/heads/*"
+    version: master
+  when: not ohmyzsh_directory.stat.exists
+  tags:
+    - system  

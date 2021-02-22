@@ -4,9 +4,11 @@
   roles:
     - pacman
     - core
+    - zsh
     - i3
     - container
     - java
     - intellij
     - rust
+    - dot-files
 

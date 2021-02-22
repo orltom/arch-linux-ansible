@@ -12,6 +12,7 @@
     - tar
     - coreutils
     - python3
+    - base-devel
   become: true
 
 - name: Install browser tools
