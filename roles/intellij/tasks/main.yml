@@ -94,6 +94,4 @@
   file:
     src: "{{ idea_exec_path }}"
     dest: /usr/bin/idea
-    owner: "{{ ansible_user }}"
-    group: "{{ unix_group }}"
     state: link

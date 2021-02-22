@@ -1,0 +1,13 @@
+---
+- name: install Open JDK
+  pacman:
+    name:
+      - "jdk{{ openjdk_version }}-openjdk"
+      - "openjdk{{ openjdk_version }}-src"
+      - "jre{{ openjdk_version }}-openjdk"
+      - "jre{{ openjdk_version }}-openjdk-headless"
+    state: present
+  tags:
+    - development
+    - java
+    - jdk
