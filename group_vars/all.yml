@@ -1,1 +1,3 @@
 intellij_dest: /opt/intellij
+openjdk_version: 11
+rustup_dest: /tmp/rustup.sh
