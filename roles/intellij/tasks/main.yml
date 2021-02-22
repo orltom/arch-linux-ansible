@@ -33,8 +33,6 @@
     path: "{{ intellij_dest }}"
     state: directory
     mode: 0755
-    owner: "{{ ansible_user }}"
-    group: "{{ unix_group }}"
   tags:
     - development
     - ide
@@ -59,8 +57,6 @@
     path: "{{ intellij_dest }}"
     state: directory
     recurse: yes
-    owner: "{{ ansible_user }}"
-    group: "{{ unix_group }}"
     mode: 0750
   tags:
     - development
