@@ -74,12 +74,9 @@
     - ide
     - intellij
 
-- name: find intellij png file
-  find:
-    paths: "{{ intellij_dest }}"
-    recurse: yes
-    patterns: "idea.png"
-  register: intellij_png_results
+- name: extract intellij exec path
+  set_fact:
+    idea_exec_path: "{{ intellij_exec_results.files[0].path }}"
   tags:
     - development
     - ide
