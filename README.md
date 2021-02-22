@@ -1,4 +1,4 @@
-![](https://github.com/orltom/setup-workstation/workflows/ci/badge.svg)
+![](https://github.com/orltom/setup-workstation/workflows/check/badge.svg)
 
 # Setup Workstation
 Arch linux developer workstation setup with ansible.
