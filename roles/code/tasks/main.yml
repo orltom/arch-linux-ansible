@@ -16,5 +16,6 @@
 - name: Copy visual studio code config files
   copy:
     src: settings.json
-    dest: "{{ home_directory }}/.config/Code\ -\ OSS/User/"
+    dest: "{{ home_directory }}/.config/Code\ -\ OSS/User/settings.json"
+    mode: 0644
     force: no
