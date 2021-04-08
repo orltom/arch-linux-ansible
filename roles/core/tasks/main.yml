@@ -4,7 +4,6 @@
     name:
       - yay
       - vim
-      - tig
       - meld
       - diffutils
       - unzip
