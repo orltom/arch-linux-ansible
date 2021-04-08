@@ -1,0 +1,25 @@
+{
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.visible": true,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.tree.indent": 25,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 14,
+    "editor.renderControlCharacters": true,
+    "editor.suggestSelection": "first",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.classpath": true,
+        "**/.settings": true,
+        "**/.projects": true
+    },
+    "explorer.confirmDelete": false,
+    "terminal.explorerKind": "external",
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 1
+}

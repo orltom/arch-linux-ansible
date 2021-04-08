@@ -16,33 +16,44 @@
     - python3
     - base-devel
   become: true
+  tags:
+    - system
+
 
 - name: Install utility tools
-  become: yes
   package:
     name:
-    - thunar
-  become: true  
+    - keepass
+  become: true
+  tags:
+    - system
 
 - name: Install web tools
-  become: yes
   package:
     name:
     - httpie
     - firefox
     - chromium
-  become: true  
+    - mutt
+  become: true
+  tags:
+    - system
+    - network  
 
 - name: Install network tools
-  become: yes
   package:
     name:
-      - wireshark
       - networkmanager
       - openssl
       - openvpn
       - ufw
       - gufw
-      - gnu-netcat
       - remina
+      - wireshark-qt
+      - tcpdump
+      - netcat-openbsd
+      - iftop
   become: true
+  tags:
+    - system
+    - network

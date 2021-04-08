@@ -1,0 +1,8 @@
+---
+- name: install visual studio code
+  pacman:
+    name:
+      - code
+  become: true
+  tags:
+    - ide

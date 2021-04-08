@@ -1,0 +1,26 @@
+---
+- name: install i3
+  pacman:
+    name:
+      - xorg
+      - i3-wm
+      - i3lock
+      - i3status
+  become: true
+  tags:
+    - wm
+
+- name: install utility tools
+  pacman:
+    name:
+      - rofi
+      - dunst
+      - pulseaudio
+      - xfce4-settings
+      - xfce4-screenshooter
+      - xfcconf
+      - ranger
+      - thunar
+  become: true
+  tags:
+    - wm
