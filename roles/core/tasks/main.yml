@@ -4,7 +4,6 @@
     name:
       - yay
       - vim
-      - git
       - tig
       - meld
       - diffutils
@@ -56,3 +55,13 @@
   tags:
     - system
     - network
+
+- name: Install basic developer tools
+  package:
+    name:
+      - git
+      - tig
+  become: true
+  tags:
+    - system
+    - development
