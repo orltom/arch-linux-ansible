@@ -2,7 +2,6 @@
 - name: install core packages
   pacman:
     name:
-      - yay
       - vim
       - meld
       - diffutils
@@ -12,10 +11,20 @@
       - tar
       - coreutils
       - python3
+  become: true
+  tags:
+    - system
+
+- name: Install basic developer tools
+  package:
+    name:
+      - git
+      - tig
       - base-devel
   become: true
   tags:
     - system
+    - development
 
 - name: Install utility tools
   package:
@@ -54,13 +63,3 @@
   tags:
     - system
     - network
-
-- name: Install basic developer tools
-  package:
-    name:
-      - git
-      - tig
-  become: true
-  tags:
-    - system
-    - development
