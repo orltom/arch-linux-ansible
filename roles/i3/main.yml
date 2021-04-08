@@ -11,6 +11,14 @@
       - dunst
   become: true
 
+- name: install utility tools
+  pacman:
+    name:
+    - pulseaudio
+    - xfce4-settings
+    - ranger
+  become: true
+
 - name: Install network tools
   become: yes
   pacman:

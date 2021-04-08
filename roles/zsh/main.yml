@@ -8,6 +8,8 @@
       - python-powerline
       - powerline-fonts
       - awesome-terminal-fonts
+      - terminus-font
+      - nerd-fonts-dejavu-complete
     state: present
   tags:
     - system

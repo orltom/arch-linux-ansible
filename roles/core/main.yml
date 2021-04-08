@@ -9,18 +9,28 @@
     - meld
     - diffutils
     - unzip
+    - zip
+    - unrar
     - tar
     - coreutils
     - python3
     - base-devel
   become: true
 
-- name: Install browser tools
+- name: Install utility tools
+  become: yes
+  package:
+    name:
+    - thunar
+  become: true  
+
+- name: Install web tools
   become: yes
   package:
     name:
     - httpie
     - firefox
+    - chromium
   become: true  
 
 - name: Install network tools
@@ -29,7 +39,10 @@
     name:
       - wireshark
       - networkmanager
+      - openssl
       - openvpn
       - ufw
       - gufw
+      - gnu-netcat
+      - remina
   become: true
