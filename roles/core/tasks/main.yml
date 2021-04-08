@@ -2,28 +2,27 @@
 - name: install core packages
   pacman:
     name:
-    - yay
-    - vim
-    - git
-    - tig
-    - meld
-    - diffutils
-    - unzip
-    - zip
-    - unrar
-    - tar
-    - coreutils
-    - python3
-    - base-devel
+      - yay
+      - vim
+      - git
+      - tig
+      - meld
+      - diffutils
+      - unzip
+      - zip
+      - unrar
+      - tar
+      - coreutils
+      - python3
+      - base-devel
   become: true
   tags:
     - system
 
-
 - name: Install utility tools
   package:
     name:
-    - keepass
+      - keepass
   become: true
   tags:
     - system
@@ -31,14 +30,14 @@
 - name: Install web tools
   package:
     name:
-    - httpie
-    - firefox
-    - chromium
-    - mutt
+      - httpie
+      - firefox
+      - chromium
+      - mutt
   become: true
   tags:
     - system
-    - network  
+    - network
 
 - name: Install network tools
   package:

@@ -1,3 +1,4 @@
+---
 - name: check if config directory exists
   stat:
     path: "{{ home_directory }}/configs"

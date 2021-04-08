@@ -53,4 +53,4 @@
     version: master
   when: not ohmyzsh_directory.stat.exists
   tags:
-    - system  
+    - system
