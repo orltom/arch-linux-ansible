@@ -54,7 +54,7 @@
       - openvpn
       - ufw
       - gufw
-      - remina
+      - remmina
       - wireshark-qt
       - tcpdump
       - netcat-openbsd
