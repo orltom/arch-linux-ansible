@@ -11,6 +11,8 @@
   file:
     path: "{{ home_directory }}/.config/Code\ -\ OSS/User/"
     state: directory
+    owner: "{{ ansible_user }}"
+    group: "users"    
     mode: 0755
 
 - name: Copy visual studio code config files

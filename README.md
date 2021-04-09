@@ -3,7 +3,7 @@
 # Setup Workstation
 Arch linux developer workstation setup with ansible.
 ```
-ansible-playbook site.yml --ask-become-pass
+ansible-playbook site.yml --ask-become-pass -u ${USERN_NAME}
 ```
 
 
