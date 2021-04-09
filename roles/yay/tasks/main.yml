@@ -41,15 +41,8 @@
     group: users
   when: not yay_bin.stat.exists
 
-- name: install go
-  pacman:
-    name: go
-  become: true
-  tags:
-    - ide
-
 - name: Build and install yay
-  command:  makepkg -si
+  command:  makepkg -si --noconfirm
   args:
     chdir: /opt/yay
   when: not yay_bin.stat.exists
