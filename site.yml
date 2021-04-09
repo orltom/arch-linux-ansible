@@ -4,6 +4,7 @@
   roles:
     - pacman
     - core
+    - yay
     - zsh
     - i3
     - container

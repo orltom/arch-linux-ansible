@@ -1,0 +1,15 @@
+---
+- name: clone yay
+  git:
+    repo: "https://aur.archlinux.org/yay-git.git"
+    dest: "/opt/yay"
+    refspec: "+refs/pull/*:refs/heads/*"
+    version: master
+  tags:
+    - system
+    - yay
+
+- name: Build and install yay
+  ansible.builtin.shell:
+    cmd: makepkg -si
+    chdir: /opt/yay
