@@ -9,7 +9,15 @@
     - system
     - yay
 
+- name: change directory permission
+  file:
+    path: /opt/yay
+    state: directory
+    recurse: yes
+    owner: "{{ ansible_user }}"
+    group: user
+
 - name: Build and install yay
-  ansible.builtin.shell:
-    cmd: makepkg -si
+  command:  makepkg -si
+  args:
     chdir: /opt/yay
