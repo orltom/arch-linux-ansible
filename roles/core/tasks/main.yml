@@ -57,7 +57,7 @@
       - remmina
       - wireshark-qt
       - tcpdump
-      - netcat-openbsd
+      - gnu-netcat
       - iftop
   become: true
   tags:
