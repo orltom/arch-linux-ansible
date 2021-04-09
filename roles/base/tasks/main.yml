@@ -10,7 +10,6 @@
       - unrar
       - tar
       - coreutils
-      - python3
   become: true
   tags:
     - system

@@ -1,0 +1,9 @@
+---
+- name: install python and utilites
+  pacman:
+    name:
+      - python3
+      - python-pip
+  become: true
+  tags:
+    - system

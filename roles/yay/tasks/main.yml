@@ -12,6 +12,8 @@
   file:
     path: "/opt/yay"
     state: directory
+    owner: "{{ ansible_user }}"
+    group: "users"
     mode: 0755
   when: not yay_bin.stat.exists
   tags:
@@ -38,6 +40,13 @@
     owner: "{{ ansible_user }}"
     group: users
   when: not yay_bin.stat.exists
+
+- name: install go
+  pacman:
+    name: go
+  become: true
+  tags:
+    - ide
 
 - name: Build and install yay
   command:  makepkg -si

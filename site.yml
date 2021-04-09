@@ -4,7 +4,7 @@
   roles:
     - pacman
     - system
-    - core
+    - base
     - yay
     - zsh
     - i3
