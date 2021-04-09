@@ -10,6 +10,14 @@
   tags:
     - wm
 
+- name: install lightdm
+  pacman:
+    name:
+      - lightdm
+  become: true
+  tags:
+    - wm
+
 - name: install utility tools
   pacman:
     name:

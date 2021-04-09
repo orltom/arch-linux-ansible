@@ -1,4 +1,11 @@
 ---
+- name: check if ZSH exists
+  stat:
+    path: /usr/bin/zsh
+  register: zsh_path
+  tags:
+    - system
+
 - name: Install zsh and extensions
   become: yes
   pacman:
@@ -15,13 +22,7 @@
 
 - name: Build and install yay
   command: yay -S nerd-fonts-dejavu-complete --answerclean N --answerdiff N
-  tags:
-    - system
-
-- name: check if ZSH exists
-  stat:
-    path: /usr/bin/zsh
-  register: zsh_path
+  when: not ohmyzsh_directory.stat.exists
   tags:
     - system
 
