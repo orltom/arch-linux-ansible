@@ -1,12 +1,18 @@
 ---
-- name: enable services
+- name: enable acpid services
   become: yes
-  command: systemctl enable acpid
+  systemd:
+    name: acpid
+    enabled: yes
 
-- name: enable services
+- name: enable avahi-daemon services
   become: yes
-  command: systemctl enable avahi-daemon
+  systemd:
+    name: avahi-daemon
+    enabled: yes
 
-- name: enable services
+- name: enable cups services
   become: yes
-  command: systemctl enable cups.service
+  systemd:
+    name: cups
+    enabled: yes

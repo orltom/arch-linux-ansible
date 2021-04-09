@@ -2,14 +2,19 @@
 
 # Setup Workstation
 Arch linux developer workstation setup with ansible.
+```
+ansible-playbook site.yml --ask-become-pass
+```
+
 
 ## Prerequisite
-* Python
-* Ansible
+```
+sudo pacman -S python ansible openssh
+```
 
-# Arch Linux Installation Hints
-- /sys/firmware/efi exists means system uses UEFI
-- https://wiki.archlinux.de/title/GRUB
+## Installation Hints
+* /sys/firmware/efi exists means system uses UEFI
+* https://wiki.archlinux.de/title/GRUB
 
 ## Disclaimer
 This software is provided as source code under an Apache 2.0 license.

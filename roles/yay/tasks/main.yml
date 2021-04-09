@@ -7,6 +7,18 @@
     - system
     - yay
 
+- name: crate yay directory
+  become: yes
+  file:
+    path: "/opt/yay"
+    state: directory
+    mode: 0755
+  when: not yay_bin.stat.exists
+  tags:
+    - development
+    - ide
+    - intellij
+
 - name: clone yay
   git:
     repo: "https://aur.archlinux.org/yay-git.git"
