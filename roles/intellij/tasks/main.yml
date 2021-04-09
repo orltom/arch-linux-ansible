@@ -32,6 +32,8 @@
   file:
     path: "{{ intellij_dest }}"
     state: directory
+    owner: "{{ ansible_user }}"
+    group: users
     mode: 0755
   tags:
     - development

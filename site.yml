@@ -10,8 +10,9 @@
     - i3
     - container
     - java
+    - rust
+    - python
     - intellij
     - code
-    - rust
     - dotfiles
 

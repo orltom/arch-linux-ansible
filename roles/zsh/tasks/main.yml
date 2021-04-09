@@ -9,8 +9,12 @@
       - powerline-fonts
       - awesome-terminal-fonts
       - terminus-font
-      - nerd-fonts-dejavu-complete
     state: present
+  tags:
+    - system
+
+- name: Build and install yay
+  command: yay -S nerd-fonts-dejavu-complete --answerclean N --answerdiff N
   tags:
     - system
 
