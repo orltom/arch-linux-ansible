@@ -3,6 +3,7 @@
   connection: local
   roles:
     - pacman
+    - system
     - core
     - yay
     - zsh

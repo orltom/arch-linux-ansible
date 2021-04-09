@@ -1,0 +1,12 @@
+---
+- name: enable services
+  become: yes
+  command: systemctl enable acpid
+
+- name: enable services
+  become: yes
+  command: systemctl enable avahi-daemon
+
+- name: enable services
+  become: yes
+  command: systemctl enable cups.service

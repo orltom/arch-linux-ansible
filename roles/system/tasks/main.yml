@@ -1,0 +1,11 @@
+---
+- name: install core packages
+  pacman:
+    name:
+      - acpid
+      - dbus
+      - avahi
+      - cups
+  become: true
+  tags:
+    - system
