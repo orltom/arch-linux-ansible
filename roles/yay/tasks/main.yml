@@ -1,10 +1,19 @@
 ---
+- name: check yay already exists
+  stat:
+    path: "/usr/bin/yay"
+  register: yay_bin
+  tags:
+    - system
+    - yay
+
 - name: clone yay
   git:
     repo: "https://aur.archlinux.org/yay-git.git"
     dest: "/opt/yay"
     refspec: "+refs/pull/*:refs/heads/*"
     version: master
+  when: not yay_bin.stat.exists
   tags:
     - system
     - yay
@@ -16,8 +25,10 @@
     recurse: yes
     owner: "{{ ansible_user }}"
     group: user
+  when: not yay_bin.stat.exists
 
 - name: Build and install yay
   command:  makepkg -si
   args:
     chdir: /opt/yay
+  when: not yay_bin.stat.exists
