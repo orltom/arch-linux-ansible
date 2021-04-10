@@ -32,9 +32,8 @@
   file:
     path: "{{ intellij_dest }}"
     state: directory
-    owner: "{{ ansible_user }}"
     group: users
-    mode: 0755
+    mode: 0770
   tags:
     - development
     - ide
@@ -45,7 +44,7 @@
   unarchive:
     src: "https://download.jetbrains.com/idea/ideaIU-{{ intellij_version }}.tar.gz"
     dest: "{{ intellij_dest }}"
-    mode: 0750
+    mode: 0770
     remote_src: yes
   tags:
     - development

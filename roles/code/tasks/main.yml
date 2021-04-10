@@ -7,17 +7,15 @@
     - ide
 
 - name: crate config directory
-  become: yes
   file:
-    path: "{{ home_directory }}/.config/Code\ -\ OSS/User/"
+    path: "~/.config/Code\ -\ OSS/User/"
     state: directory
-    owner: "{{ ansible_user }}"
     group: "users"
-    mode: 0755
+    mode: 0750
 
 - name: Copy visual studio code config files
   copy:
     src: settings.json
-    dest: "{{ home_directory }}/.config/Code\ -\ OSS/User/settings.json"
-    mode: 0644
+    dest: "~/.config/Code\ -\ OSS/User/settings.json"
+    mode: 0640
     force: no
