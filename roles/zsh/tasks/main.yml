@@ -20,12 +20,6 @@
   tags:
     - system
 
-- name: Build and install yay
-  command: yay -S nerd-fonts-dejavu-complete --answerclean N --answerdiff N
-  when: not ohmyzsh_directory.stat.exists
-  tags:
-    - system
-
 - name: set ZSH as default terminal
   become: yes
   shell: chsh -s $(which zsh)
@@ -37,6 +31,12 @@
   stat:
     path: "{{ home_directory }}/.oh-my-zsh"
   register: ohmyzsh_directory
+  tags:
+    - system
+
+- name: Build and install font
+  command: yay -S nerd-fonts-dejavu-complete --answerclean N --answerdiff N
+  when: not ohmyzsh_directory.stat.exists
   tags:
     - system
 
