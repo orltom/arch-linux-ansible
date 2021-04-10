@@ -4,15 +4,18 @@
   systemd:
     name: acpid
     enabled: yes
+    state: started
 
 - name: enable avahi-daemon services
   become: yes
   systemd:
     name: avahi-daemon
     enabled: yes
+    state: started
 
 - name: enable cups services
   become: yes
   systemd:
     name: cups
     enabled: yes
+    state: started

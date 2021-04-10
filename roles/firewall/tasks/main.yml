@@ -1,0 +1,10 @@
+- name: Install network tools
+  package:
+    name:
+      - ufw
+      - gufw
+  become: true
+  tags:
+    - system
+    - network
+    - firewall

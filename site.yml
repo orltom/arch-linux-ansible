@@ -5,6 +5,7 @@
     - pacman
     - system
     - base
+    - firewall
     - yay
     - zsh
     - i3

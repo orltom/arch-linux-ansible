@@ -1,5 +1,5 @@
 ---
-- name: install core packages
+- name: install base packages
   pacman:
     name:
       - vim
@@ -51,8 +51,6 @@
       - networkmanager
       - openssl
       - openvpn
-      - ufw
-      - gufw
       - remmina
       - wireshark-qt
       - tcpdump
