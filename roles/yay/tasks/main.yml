@@ -13,7 +13,7 @@
     path: "/opt/yay"
     state: directory
     group: "users"
-    mode: 0755
+    mode: 0775
   when: not yay_bin.stat.exists
   tags:
     - development
@@ -35,4 +35,4 @@
   command: makepkg -si --noconfirm
   args:
     chdir: /opt/yay
-  when: not (yay_bin.stat.exists or ansible_user == "root")
+  when: not (yay_bin.stat.exists or lookup('env','USER') == "root")

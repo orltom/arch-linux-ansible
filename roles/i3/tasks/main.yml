@@ -32,3 +32,8 @@
   become: true
   tags:
     - wm
+
+- name: Copy .xintrc to home directroy
+  copy:
+    src: .xinitc
+    dest: ~/.xinitc
