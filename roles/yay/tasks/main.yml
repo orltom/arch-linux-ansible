@@ -32,7 +32,7 @@
     - yay
 
 - name: Build and install yay
-  command:  makepkg -si --noconfirm
+  command: makepkg -si --noconfirm
   args:
     chdir: /opt/yay
-  when: not yay_bin.stat.exists
+  when: not (yay_bin.stat.exists and anbile_user == "root")
