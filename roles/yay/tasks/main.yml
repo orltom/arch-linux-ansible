@@ -35,4 +35,4 @@
   command: makepkg -si --noconfirm
   args:
     chdir: /opt/yay
-  when: not (yay_bin.stat.exists and ansible_user == "root")
+  when: not (yay_bin.stat.exists or ansible_user == "root")
