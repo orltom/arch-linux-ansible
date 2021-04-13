@@ -44,14 +44,13 @@
   tags:
     - wm
 
-- name: install default graphic drivers
+- name: install terminal
   pacman:
     name:
-      - xf86-video-fbdev
-      - xf86-video-vesa
+      - gnome-terminal
   become: true
   tags:
-    - wm    
+    - wm
 
 - name: Copy .xintrc to home directroy
   copy:
