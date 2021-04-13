@@ -20,7 +20,7 @@
   tags:
     - system
 
-- name: set ZSH as default terminal
+- name: set ZSH as default shell
   become: yes
   shell: chsh -s $(which zsh)
   when: zsh_path.stat.exists

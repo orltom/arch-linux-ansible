@@ -3,6 +3,8 @@
   pacman:
     name:
       - xorg
+      - xorg-xinit
+      - xorg-twm
       - i3-wm
       - i3lock
       - i3status
@@ -33,7 +35,31 @@
   tags:
     - wm
 
+- name: install default graphic drivers
+  pacman:
+    name:
+      - xf86-video-fbdev
+      - xf86-video-vesa
+  become: true
+  tags:
+    - wm
+
+- name: install default graphic drivers
+  pacman:
+    name:
+      - xf86-video-fbdev
+      - xf86-video-vesa
+  become: true
+  tags:
+    - wm    
+
 - name: Copy .xintrc to home directroy
   copy:
-    src: .xinitc
-    dest: ~/.xinitc
+    dest: ~/.xincattrc
+    content: |
+      setxbmap de
+      exec i3
+    mode: 0640
+    force: no
+  tags:
+    - wm
