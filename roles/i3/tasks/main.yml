@@ -53,7 +53,7 @@
   tags:
     - wm
 
-- name: adding existing user "{{ ansible_user }}" to some graphical relevant groups 
+- name: adding existing user "{{ ansible_user }}" to some graphical relevant groups
   user:
     name: "{{ ansible_user }}"
     groups:
