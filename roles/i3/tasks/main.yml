@@ -54,14 +54,14 @@
     - wm
 
 - name: adding existing user "{{ ansible_user }}" to some graphical relevant groups 
-    user:
-      name: "{{ ansible_user }}"
+  user:
+    name: "{{ ansible_user }}"
       groups:
         - power
         - audio
         - storage
       append: yes
-    become: yes
+  become: yes
 
 - name: Copy .xintrc to home directroy
   copy:
