@@ -34,11 +34,11 @@
   tags:
     - system
 
-- name: Build and install font
-  command: yay -S nerd-fonts-dejavu-complete --answerclean N --answerdiff N
-  when: not ohmyzsh_directory.stat.exists
-  tags:
-    - system
+# - name: Build and install font
+#   command: yay -S nerd-fonts-dejavu-complete --answerclean N --answerdiff N
+#   when: not ohmyzsh_directory.stat.exists
+#   tags:
+#     - system
 
 - name: clone omyzsh
   git:
