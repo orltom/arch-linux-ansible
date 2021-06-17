@@ -12,6 +12,9 @@ ansible-playbook site.yml --ask-become-pass -u ${USERN_NAME}
 sudo pacman -S python ansible openssh
 ```
 
+## DOT files
+https://github.com/orltom/linux-user-configs
+
 ## Installation Hints
 * /sys/firmware/efi exists means system uses UEFI
 * https://wiki.archlinux.de/title/GRUB
@@ -21,5 +24,3 @@ This software is provided as source code under an Apache 2.0 license.
 
 ## Contributing
 If you are missing a feature or see a bug. Please report it.
-
-TODO
