@@ -16,6 +16,7 @@
       - powerline-fonts
       - awesome-terminal-fonts
       - terminus-font
+      - ttf-nerd-fonts-symbols
     state: present
   tags:
     - system
