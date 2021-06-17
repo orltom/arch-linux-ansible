@@ -35,4 +35,5 @@
   command: makepkg -si --noconfirm
   args:
     chdir: /opt/yay
+  become: false
   when: not (yay_bin.stat.exists or lookup('env','USER') == "root")

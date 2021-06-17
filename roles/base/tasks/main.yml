@@ -10,6 +10,7 @@
       - unrar
       - tar
       - coreutils
+      - tree
   become: true
   tags:
     - system
