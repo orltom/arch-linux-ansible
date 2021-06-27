@@ -31,7 +31,7 @@
   file:
     src: "{{ home_directory }}/configs/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
-    owner: "{{ ansible_user }}"
+    owner: "{{ username }}"
     group: "{{ unix_group }}"
     state: link
   loop:
@@ -54,7 +54,7 @@
   file:
     src: "{{ home_directory }}/configs/bin/{{ item }}"
     dest: "{{ home_directory }}/bin/{{ item }}"
-    owner: "{{ ansible_user }}"
+    owner: "{{ username }}"
     group: "{{ unix_group }}"
     state: link
   loop:
@@ -78,7 +78,7 @@
   file:
     src: "{{ home_directory }}/configs/.config/{{ item }}"
     dest: "{{ home_directory }}/.config/{{ item }}"
-    owner: "{{ ansible_user }}"
+    owner: "{{ username }}"
     group: "{{ unix_group }}"
     state: link
   loop:

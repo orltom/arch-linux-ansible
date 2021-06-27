@@ -15,5 +15,5 @@ jobs:
         uses: roles-ansible/check-ansible-archlinux-latest-action@master
         with:
           targets: 'site.yml'
-          group: 'all'
+          group: 'github'
           hosts: 'localhost'

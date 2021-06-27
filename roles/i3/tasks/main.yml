@@ -55,7 +55,7 @@
 
 - name: adding existing user to some multimedia unix groups
   user:
-    name: "{{ ansible_user }}"
+    name: "{{ username }}"
     groups:
       - power
       - audio
