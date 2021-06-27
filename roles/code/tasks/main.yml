@@ -10,7 +10,7 @@
   file:
     path: "~/.config/Code\ -\ OSS/User/"
     state: directory
-    group: "users"
+    group: "{{ unix_group }}"
     mode: 0750
 
 - name: Copy visual studio code config files
