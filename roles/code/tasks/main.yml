@@ -8,7 +8,7 @@
 
 - name: crate config directory
   file:
-    path: "~/.config/Code\ -\ OSS/User/"
+    path: "{{ home_directory }}/.config/Code - OSS/User/"
     state: directory
     group: "{{ unix_group }}"
     mode: 0750
@@ -16,6 +16,6 @@
 - name: Copy visual studio code config files
   copy:
     src: settings.json
-    dest: "~/.config/Code\ -\ OSS/User/settings.json"
+    dest: "{{ home_directory }}/.config/Code - OSS/User/settings.json"
     mode: 0640
     force: no
