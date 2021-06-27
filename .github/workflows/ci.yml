@@ -15,16 +15,16 @@ jobs:
         uses: canastro/copy-file-action@master
         with:
           source: 'site.yml'
-          target: '.github/site.yml.modified'
+          target: 'modifed.yml'
       - name: remove dotfiles role
         uses: jacobtomlinson/gha-find-replace@master
         with:
           find: "- dotfiles"
           replace: ""
-          include: ".github/site.yml.modified"
+          include: "modifed.yml"
       - name: ansible check with archlinux:latest
         uses: roles-ansible/check-ansible-archlinux-latest-action@master
         with:
-          targets: '.github/site.yml.modified'
+          targets: 'modifed.yml'
           group: 'github'
           hosts: 'localhost'
