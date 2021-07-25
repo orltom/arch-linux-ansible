@@ -35,6 +35,18 @@
   tags:
     - wm
 
+- name: install fonts
+  pacman:
+    name:
+      - ttf-jetbrains-mono
+      - cantarell-fonts
+      - gnu-free-fonts
+      - ttf-dejavu
+      - noto-fonts
+  become: true
+  tags:
+    - wm
+
 - name: install default graphic drivers
   pacman:
     name:

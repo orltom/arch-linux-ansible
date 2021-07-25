@@ -11,6 +11,7 @@
       - tar
       - coreutils
       - tree
+      - man-db
   become: true
   tags:
     - system
@@ -57,6 +58,7 @@
       - tcpdump
       - gnu-netcat
       - iftop
+      - iwd
   become: true
   tags:
     - system
