@@ -65,12 +65,10 @@
     - network
 
 - name: Install nis tools
-  package:
-    name:
-      - yp-tools
-      - ypbind-mt
+  community.general.pacman:
+    name: 
       - autofs
-  become: true
-  tags:
-    - system
-    - network
+      - ypbind-mt
+      - yp-tools
+    state: present
+    executable: yay

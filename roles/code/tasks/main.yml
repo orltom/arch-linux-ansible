@@ -5,17 +5,3 @@
   become: true
   tags:
     - ide
-
-- name: crate config directory
-  file:
-    path: "{{ home_directory }}/.config/Code - OSS/User/"
-    state: directory
-    group: "{{ unix_group }}"
-    mode: 0750
-
-- name: Copy visual studio code config files
-  copy:
-    src: settings.json
-    dest: "{{ home_directory }}/.config/Code - OSS/User/settings.json"
-    mode: 0640
-    force: no

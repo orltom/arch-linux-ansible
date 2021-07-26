@@ -3,13 +3,14 @@
   connection: local
   roles:
     - pacman
+    - yay
     - system
     - base
     - firewall
-    - yay
     - zsh
     - i3
     - container
+    - gcp
     - java
     - rust
     - python

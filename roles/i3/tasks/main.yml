@@ -95,3 +95,13 @@
     enabled: yes
     state: started
   become: yes
+
+- name: Install fonts
+  community.general.pacman:
+    name: 
+      - ttf-google-fonts-git
+      - ttf-jetbrains-mono
+      - ttf-ms-fonts
+      - nerd-fonts-dejavu-complete
+    state: present
+    executable: yay

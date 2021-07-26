@@ -1,0 +1,6 @@
+- name: Install google cloud sdk
+  community.general.pacman:
+    name: 
+      - google-cloud-sdk
+    state: present
+    executable: yay
