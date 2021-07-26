@@ -63,3 +63,14 @@
   tags:
     - system
     - network
+
+- name: Install nis tools
+  package:
+    name:
+      - yp-tools
+      - ypbind-mt
+      - autofs
+  become: true
+  tags:
+    - system
+    - network

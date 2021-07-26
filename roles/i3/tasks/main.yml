@@ -16,6 +16,7 @@
   pacman:
     name:
       - lightdm
+      - lightdm-gtk-greeter
   become: true
   tags:
     - wm
@@ -31,6 +32,8 @@
       - xfconf
       - ranger
       - thunar
+      - thunar-archive-plugin
+      - gnome-calculator
   become: true
   tags:
     - wm
@@ -85,3 +88,10 @@
     force: no
   tags:
     - wm
+
+- name: enable ligthdm service
+  service:
+    name: lightdm
+    enabled: yes
+    state: started
+  become: yes

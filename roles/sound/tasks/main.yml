@@ -1,0 +1,11 @@
+---
+- name: install sound packages
+  pacman:
+    name:
+      - pamixer
+      - pulseaudio
+      - pulseaudio-alsa
+      - alsa-utils
+  become: true
+  tags:
+    - sound
