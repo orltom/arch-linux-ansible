@@ -10,3 +10,16 @@
     - kubectl
     - helm
   become: true
+
+- name: enable dockerd services
+  become: yes
+  systemd:
+    name: docker.socket
+    enabled: yes
+    state: started
+
+- name: Add the user to group 'docker'
+  user:
+    name: "{{ username }}"
+    groups: docker
+    append: yes

@@ -26,9 +26,3 @@ This software is provided as source code under an Apache 2.0 license.
 ## Contributing
 If you are missing a feature or see a bug. Please report it.
 
-## TODO
-systemctl enable acpid
-systemctl enable avahi-daemon
-systemctl enable cups.service
-systemctl enable --now systemd-timesyncd.service
-pacman -S lightdm-gtk-greeter

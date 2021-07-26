@@ -6,6 +6,8 @@
       - dbus
       - avahi
       - cups
+      - bluez
+      - bluez-utils
       - openssh
   become: true
   tags:
