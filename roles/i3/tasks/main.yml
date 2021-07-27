@@ -105,3 +105,10 @@
       - nerd-fonts-dejavu-complete
     state: present
     executable: yay
+
+- name: Install theme
+  community.general.pacman:
+    name: 
+      - arc-icon-theme-git
+    state: present
+    executable: yay

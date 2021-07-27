@@ -10,3 +10,10 @@
   become: true
   tags:
     - sound
+
+- name: install spotify
+  community.general.pacman:
+    name: 
+      - spotify
+    state: present
+    executable: yay

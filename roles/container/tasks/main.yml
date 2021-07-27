@@ -23,3 +23,10 @@
     name: "{{ username }}"
     groups: docker
     append: yes
+
+- name: Install driver
+  community.general.pacman:
+    name: 
+      - docker-machine-drvier-kvm2
+    state: present
+    executable: yay
