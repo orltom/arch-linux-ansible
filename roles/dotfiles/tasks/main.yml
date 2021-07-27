@@ -1,7 +1,7 @@
 ---
 - name: check if config directory exists
   stat:
-    path: "{{ home_directory }}/configs"
+    path: "{{ home_directory }}/repositories/configs"
   register: dot_files_directory
   tags:
     - system
@@ -9,7 +9,7 @@
 - name: clone dot-files
   git:
     repo: "https://github.com/orltom/linux-user-configs"
-    dest: "{{ home_directory }}/configs"
+    dest: "{{ home_directory }}/repositories/configs"
     refspec: "+refs/pull/*:refs/heads/*"
     version: master
   when: not dot_files_directory.stat.exists
@@ -29,7 +29,7 @@
 
 - name: add config links
   file:
-    src: "{{ home_directory }}/configs/{{ item }}"
+    src: "{{ home_directory }}/repositories/configs/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
     owner: "{{ username }}"
     group: "{{ unix_group }}"
@@ -48,7 +48,7 @@
 
 - name: link folder
   file:
-    src: "{{ home_directory }}/configs/{{ item }}"
+    src: "{{ home_directory }}/repositories/configs/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
     owner: "{{ username }}"
     group: "{{ unix_group }}"
@@ -71,7 +71,7 @@
 
 - name: add .config programm links
   file:
-    src: "{{ home_directory }}/configs/.config/{{ item }}"
+    src: "{{ home_directory }}/repositories/configs/.config/{{ item }}"
     dest: "{{ home_directory }}/.config/{{ item }}"
     owner: "{{ username }}"
     group: "{{ unix_group }}"
