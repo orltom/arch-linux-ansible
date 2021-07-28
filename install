@@ -2,5 +2,8 @@
 
 set -e
 
+USERN_NAME=$(id --user --name)
+USER_GROUP=$(id --group --name)
+
 ansible-galaxy install -r requirements.yml
-ansible-playbook site.yml --ask-become-pass -u $(whoami)
+ansible-playbook site.yml --ask-become-pass -u "${USERN_NAME}" --extra-vars "{\"username\": \"${USERN_NAME}\", \"unix_group\": \"${USER_GROUP}\"}"
