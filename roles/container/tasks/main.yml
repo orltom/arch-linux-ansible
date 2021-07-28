@@ -27,6 +27,6 @@
 - name: Install driver
   community.general.pacman:
     name: 
-      - docker-machine-drvier-kvm2
+      - docker-machine-driver-kvm2
     state: present
     executable: yay

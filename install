@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+ansible-galaxy install -r requirements.yml
+ansible-playbook site.yml --ask-become-pass -u $(whoami)

@@ -5,7 +5,7 @@
       - xorg
       - xorg-xinit
       - xorg-twm
-      - i3-wm
+      - i3-gaps
       - i3lock
       - i3status
   become: true
@@ -101,10 +101,10 @@
     name: 
       - ttf-google-fonts-git
       - ttf-jetbrains-mono
-      - ttf-ms-fonts
       - nerd-fonts-dejavu-complete
     state: present
     executable: yay
+    extra_args: --noconfirm
 
 - name: Install theme
   community.general.pacman:
@@ -112,3 +112,4 @@
       - arc-icon-theme-git
     state: present
     executable: yay
+    extra_args: --noconfirm

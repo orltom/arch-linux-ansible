@@ -6,11 +6,14 @@ Arch linux developer workstation setup with ansible.
 ansible-playbook site.yml --ask-become-pass -u ${USERN_NAME}
 ```
 
-
 ## Prerequisite
 ```
 sudo pacman -S python ansible openssh
-ansible-galaxy install -r requirements.yml
+```
+
+## Execute playbook on local machine
+```
+./install
 ```
 
 ## DOT files
