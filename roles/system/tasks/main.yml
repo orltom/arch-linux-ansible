@@ -12,3 +12,22 @@
   become: true
   tags:
     - system
+
+- name: Install printer driver and tools
+  community.general.pacman:
+    name:
+      - hplip
+    state: present
+    executable: yay
+
+- name: adding existing user '{{ username }}' to group sys
+  user:
+    name: "{{ username }}"
+    groups: sys
+    append: yes
+
+- name: adding existing user '{{ username }}' to group lp
+  user:
+    name: "{{ username }}"
+    groups: lp
+    append: yes

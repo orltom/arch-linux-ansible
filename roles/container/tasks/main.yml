@@ -2,13 +2,13 @@
 - name: install container software
   pacman:
     name:
-    - docker
-    - docker-compose
-    - virtualbox
-    - linux-headers
-    - minikube
-    - kubectl
-    - helm
+      - docker
+      - docker-compose
+      - virtualbox
+      - linux-headers
+      - minikube
+      - kubectl
+      - helm
   become: true
 
 - name: enable dockerd services
@@ -26,7 +26,15 @@
 
 - name: Install driver
   community.general.pacman:
-    name: 
+    name:
       - docker-machine-driver-kvm2
+    state: present
+    executable: yay
+
+- name: Install container software from yay
+  community.general.pacman:
+    name:
+      - origin-client
+      - rancher-k3d-bin
     state: present
     executable: yay
