@@ -2,8 +2,9 @@
 exclude_paths:
  - .github/
  - .cache/
+ - .ansible-lint
 
 use_default_rules: true
 
 skip_list:
-  - fqcn-builtins
+ - fqcn-builtins
