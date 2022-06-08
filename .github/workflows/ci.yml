@@ -8,22 +8,22 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: lint
-        uses: ansible/ansible-lint-action@master
+        uses: ansible/ansible-lint-action@main
         with:
           targets: 'site.yml'
       - name: copy site.yml file
-        uses: canastro/copy-file-action@master
+        uses: canastro/copy-file-action@main
         with:
           source: 'site.yml'
           target: 'modifed.yml'
       - name: remove dotfiles role
-        uses: jacobtomlinson/gha-find-replace@master
+        uses: jacobtomlinson/gha-find-replace@main
         with:
           find: "- dotfiles"
           replace: ""
           include: "modifed.yml"
       - name: ansible check with archlinux:latest
-        uses: roles-ansible/check-ansible-archlinux-latest-action@master
+        uses: roles-ansible/check-ansible-archlinux-latest-action@main
         with:
           targets: 'modifed.yml'
           group: 'github'
