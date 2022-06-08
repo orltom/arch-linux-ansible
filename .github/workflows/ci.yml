@@ -20,7 +20,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
           find: "- dotfiles"
-          replace: ""
+          replace: " "
           include: "modifed.yml"
       - name: ansible check with archlinux:latest
         uses: roles-ansible/check-ansible-archlinux-latest-action@master
