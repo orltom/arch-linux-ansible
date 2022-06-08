@@ -24,10 +24,10 @@
   user:
     name: "{{ username }}"
     groups: sys
-    append: yes
+    append: true
 
 - name: adding existing user '{{ username }}' to group lp
   user:
     name: "{{ username }}"
     groups: lp
-    append: yes
+    append: true

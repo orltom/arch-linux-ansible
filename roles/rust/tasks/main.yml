@@ -1,17 +1,17 @@
 ---
 - name: Download rust up
-  become: yes
+  become: true
   get_url:
     url: https://sh.rustup.rs
     dest: "{{ rustup_dest }}"
-    mode: '0440'
+    mode: "0440"
   register: download
   tags:
     - development
     - rust
 
 - name: chmod of rustup.sh
-  become: yes
+  become: true
   file:
     path: "{{ rustup_dest }}"
     state: touch

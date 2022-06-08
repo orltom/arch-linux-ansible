@@ -2,10 +2,10 @@
 - name: install Open JDK
   pacman:
     name:
-      - "jdk{{ openjdk_version }}-openjdk"
-      - "openjdk{{ openjdk_version }}-src"
-      - "jre{{ openjdk_version }}-openjdk"
-      - "jre{{ openjdk_version }}-openjdk-headless"
+      - jdk{{ openjdk_version }}-openjdk
+      - openjdk{{ openjdk_version }}-src
+      - jre{{ openjdk_version }}-openjdk
+      - jre{{ openjdk_version }}-openjdk-headless
     state: present
   become: true
   tags:

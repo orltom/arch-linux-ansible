@@ -66,7 +66,7 @@
 
 - name: Install nis tools
   community.general.pacman:
-    name: 
+    name:
       - autofs
       - ypbind-mt
       - yp-tools

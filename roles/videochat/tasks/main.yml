@@ -1,8 +1,8 @@
+---
 - name: Install video chat tools
   community.general.pacman:
-    name: 
+    name:
       - zoom
-      - webex-bin
       - teams
     state: present
     executable: yay

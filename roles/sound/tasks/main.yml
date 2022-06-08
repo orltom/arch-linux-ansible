@@ -13,7 +13,7 @@
 
 - name: install spotify
   community.general.pacman:
-    name: 
+    name:
       - spotify
     state: present
     executable: yay

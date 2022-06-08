@@ -3,19 +3,19 @@
   become: true
   pacman:
     name:
-    - docker
-    - docker-compose
-    - virtualbox
-    - linux-headers
-    - kubectl
-    - helm
-    - jq
+      - docker
+      - docker-compose
+      - virtualbox
+      - linux-headers
+      - kubectl
+      - helm
+      - jq
 
 - name: enable dockerd services
   become: true
   systemd:
     name: docker.socket
-    enabled: yes
+    enabled: true
     state: started
 
 - name: Add the user to group 'docker'
@@ -23,7 +23,7 @@
   user:
     name: "{{ username }}"
     groups: docker
-    append: yes
+    append: true
 
 - name: Install container software from yay
   community.general.pacman:

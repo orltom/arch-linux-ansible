@@ -1,8 +1,9 @@
+---
 - name: find latest version
   uri:
-    url: "https://data.services.jetbrains.com/products/releases?code=IIU%2CIIC&latest=true&type=release"
-    return_content: yes
-    validate_certs: no
+    url: https://data.services.jetbrains.com/products/releases?code=IIU%2CIIC&latest=true&type=release
+    return_content: true
+    validate_certs: false
     body_format: json
   register: intellij_releases_response
   tags:
@@ -42,22 +43,22 @@
 
 - name: download intellij
   unarchive:
-    src: "https://download.jetbrains.com/idea/ideaIU-{{ intellij_version }}.tar.gz"
+    src: https://download.jetbrains.com/idea/ideaIU-{{ intellij_version }}.tar.gz
     dest: "{{ intellij_dest }}"
     mode: 0770
-    remote_src: yes
+    remote_src: true
   tags:
     - development
     - ide
     - intellij
   when: not intellij.stat.exists
 
-- name: "change owner ship of intellij"
+- name: change owner ship of intellij
   become: true
   file:
     path: "{{ intellij_dest }}"
     state: directory
-    recurse: yes
+    recurse: true
     mode: 0750
   tags:
     - development
@@ -67,8 +68,8 @@
 - name: find intellij exec file
   find:
     paths: "{{ intellij_dest }}"
-    recurse: yes
-    patterns: "idea.sh"
+    recurse: true
+    patterns: idea.sh
   register: intellij_exec_results
   tags:
     - development

@@ -10,12 +10,12 @@ jobs:
       - name: lint
         uses: ansible/ansible-lint-action@main
         with:
-          targets: 'site.yml'
+          targets: "site.yml"
       - name: copy site.yml file
         uses: canastro/copy-file-action@master
         with:
-          source: 'site.yml'
-          target: 'modifed.yml'
+          source: "site.yml"
+          target: "modifed.yml"
       - name: remove dotfiles role
         uses: jacobtomlinson/gha-find-replace@v2
         with:
@@ -25,6 +25,6 @@ jobs:
       - name: ansible check with archlinux:latest
         uses: roles-ansible/check-ansible-archlinux-latest-action@master
         with:
-          targets: 'modifed.yml'
-          group: 'github'
-          hosts: 'localhost'
+          targets: "modifed.yml"
+          group: "github"
+          hosts: "localhost"

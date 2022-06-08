@@ -7,7 +7,7 @@
     - system
 
 - name: Install zsh and extensions
-  become: yes
+  become: true
   pacman:
     name:
       - zsh
@@ -22,7 +22,7 @@
     - system
 
 - name: set ZSH as default shell
-  become: yes
+  become: true
   shell: chsh -s $(which zsh)
   when: zsh_path.stat.exists
   tags:
@@ -43,9 +43,9 @@
 
 - name: clone omyzsh
   git:
-    repo: "https://github.com/ohmyzsh/ohmyzsh.git"
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: "{{ home_directory }}/.oh-my-zsh"
-    refspec: "+refs/pull/*:refs/heads/*"
+    refspec: +refs/pull/*:refs/heads/*
     version: master
   when: not ohmyzsh_directory.stat.exists
   tags:
@@ -53,9 +53,9 @@
 
 - name: clone powerline
   git:
-    repo: "https://github.com/bhilburn/powerlevel9k.git"
+    repo: https://github.com/bhilburn/powerlevel9k.git
     dest: "{{ home_directory }}/.oh-my-zsh/custom/themes/powerlevel9k"
-    refspec: "+refs/pull/*:refs/heads/*"
+    refspec: +refs/pull/*:refs/heads/*
     version: master
   when: not ohmyzsh_directory.stat.exists
   tags:
@@ -65,7 +65,7 @@
   git:
     repo: " https://github.com/zsh-users/zsh-syntax-highlighting.git"
     dest: "{{ home_directory }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
-    refspec: "+refs/pull/*:refs/heads/*"
+    refspec: +refs/pull/*:refs/heads/*
     version: master
   when: not ohmyzsh_directory.stat.exists
   tags:
@@ -75,7 +75,7 @@
   git:
     repo: " https://github.com/zsh-users/zsh-autosuggestions.git"
     dest: "{{ home_directory }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
-    refspec: "+refs/pull/*:refs/heads/*"
+    refspec: +refs/pull/*:refs/heads/*
     version: master
   when: not ohmyzsh_directory.stat.exists
   tags:

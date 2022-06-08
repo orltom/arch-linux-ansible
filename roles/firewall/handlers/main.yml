@@ -1,7 +1,7 @@
 ---
 - name: enable ufw services
-  become: yes
+  become: true
   systemd:
     name: ufw
-    enabled: yes
+    enabled: true
     state: started

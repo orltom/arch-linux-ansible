@@ -8,9 +8,9 @@
 
 - name: clone dot-files
   git:
-    repo: "git@github.com:orltom/linux-user-configs.git"
+    repo: git@github.com:orltom/linux-user-configs.git
     dest: "{{ home_directory }}/repositories/configs"
-    refspec: "+refs/pull/*:refs/heads/*"
+    refspec: +refs/pull/*:refs/heads/*
     version: master
   when: not dot_files_directory.stat.exists
   tags:

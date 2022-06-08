@@ -1,18 +1,18 @@
 ---
 - name: check yay already exists
   stat:
-    path: "/usr/bin/yay"
+    path: /usr/bin/yay
   register: yay_bin
   tags:
     - system
     - yay
 
 - name: crate yay directory
-  become: yes
+  become: true
   file:
-    path: "/opt/yay"
+    path: /opt/yay
     state: directory
-    group: "users"
+    group: users
     mode: 0775
   when: not yay_bin.stat.exists
   tags:
@@ -22,9 +22,9 @@
 
 - name: clone yay
   git:
-    repo: "https://aur.archlinux.org/yay-git.git"
-    dest: "/opt/yay"
-    refspec: "+refs/pull/*:refs/heads/*"
+    repo: https://aur.archlinux.org/yay-git.git
+    dest: /opt/yay
+    refspec: +refs/pull/*:refs/heads/*
     version: master
   when: not yay_bin.stat.exists
   tags:

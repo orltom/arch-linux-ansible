@@ -1,5 +1,5 @@
 ---
 - name: Execute rustup
-  become: yes
+  become: true
   command: "{{ rustup_dest }} -y --quiet --profile complete"
   when: download.changed
