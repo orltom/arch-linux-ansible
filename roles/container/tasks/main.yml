@@ -10,6 +10,8 @@
       - kubectl
       - helm
       - jq
+  tags:
+    - container
 
 - name: enable dockerd services
   become: true
@@ -17,6 +19,8 @@
     name: docker.socket
     enabled: true
     state: started
+  tags:
+    - container
 
 - name: Add the user to group 'docker'
   become: true
@@ -24,6 +28,8 @@
     name: "{{ username }}"
     groups: docker
     append: true
+  tags:
+    - container
 
 - name: Install container software from yay
   community.general.pacman:
@@ -32,3 +38,6 @@
       - rancher-k3d-bin
     state: present
     executable: yay
+  tags:
+    - container
+    - yay

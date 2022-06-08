@@ -72,3 +72,7 @@
       - yp-tools
     state: present
     executable: yay
+  tags:
+    - system
+    - nis
+    - yay

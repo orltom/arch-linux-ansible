@@ -16,9 +16,8 @@
     mode: 0775
   when: not yay_bin.stat.exists
   tags:
-    - development
-    - ide
-    - intellij
+    - system
+    - yay
 
 - name: clone yay
   git:
@@ -31,9 +30,11 @@
     - system
     - yay
 
-# - name: Build and install yay
-#   command: makepkg -si --noconfirm
-#   args:
-#     chdir: /opt/yay
-#   become: false
-#   when: not (yay_bin.stat.exists or lookup('env','USER') == "root")
+- name: Build and install yay
+  command: makepkg -si --noconfirm
+  args:
+    chdir: /opt/yay
+  become: false
+  tags:
+    - system
+    - yay

@@ -6,3 +6,6 @@
       - teams
     state: present
     executable: yay
+  tags:
+    - chat
+    - yay

@@ -19,15 +19,21 @@
       - hplip
     state: present
     executable: yay
+  tags:
+    - system
 
 - name: adding existing user '{{ username }}' to group sys
   user:
     name: "{{ username }}"
     groups: sys
     append: true
+  tags:
+    - system
 
 - name: adding existing user '{{ username }}' to group lp
   user:
     name: "{{ username }}"
     groups: lp
     append: true
+  tags:
+    - system

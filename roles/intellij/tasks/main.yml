@@ -90,3 +90,7 @@
     src: "{{ idea_exec_path }}"
     dest: /usr/bin/idea
     state: link
+  tags:
+    - development
+    - ide
+    - intellij

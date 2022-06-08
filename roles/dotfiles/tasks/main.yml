@@ -5,6 +5,7 @@
   register: dot_files_directory
   tags:
     - system
+    - dotfiles
 
 - name: clone dot-files
   git:
@@ -15,6 +16,7 @@
   when: not dot_files_directory.stat.exists
   tags:
     - system
+    - dotfiles
 
 - name: Remove links
   file:
@@ -26,6 +28,7 @@
     - .zshrc
   tags:
     - system
+    - dotfiles
 
 - name: add config links
   file:
@@ -45,6 +48,7 @@
     - .bashrc
   tags:
     - system
+    - dotfiles
 
 - name: link folder
   file:
@@ -60,6 +64,7 @@
     - .mutt
   tags:
     - system
+    - dotfiles
 
 - name: Create .config directory if it does not exist
   file:
@@ -68,6 +73,7 @@
     mode: 0750
   tags:
     - system
+    - dotfiles
 
 - name: add .config programm links
   file:
@@ -89,7 +95,11 @@
     - fontconfig
   tags:
     - system
+    - dotfiles
 
 - name: set gnome terimal without menu bar
   command: gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
   when: not dot_files_directory.stat.exists
+  tags:
+    - system
+    - dotfiles

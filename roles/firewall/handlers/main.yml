@@ -5,3 +5,6 @@
     name: ufw
     enabled: true
     state: started
+  tags:
+    - system
+    - network
