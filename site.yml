@@ -12,11 +12,13 @@
     - container
     - gcp
     - java
+    - golang
     - rust
     - python
     - intellij
     - code
     - sound
     - videochat
+    - office
     - dotfiles
 

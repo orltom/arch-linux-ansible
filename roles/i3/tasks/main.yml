@@ -8,6 +8,7 @@
       - i3-gaps
       - i3lock
       - i3status
+      - i3blocks
   become: true
   tags:
     - wm
@@ -33,6 +34,7 @@
       - ranger
       - thunar
       - thunar-archive-plugin
+      - xarchiver
       - gnome-calculator
   become: true
   tags:
@@ -76,7 +78,7 @@
       - audio
       - storage
     append: yes
-  become: yes
+  become: true
 
 - name: Copy .xintrc to home directroy
   copy:
@@ -94,7 +96,7 @@
     name: lightdm
     enabled: yes
     state: started
-  become: yes
+  become: true
 
 - name: Install fonts
   community.general.pacman:

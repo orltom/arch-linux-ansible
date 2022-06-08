@@ -1,0 +1,8 @@
+---
+- name: install go
+  pacman:
+    name:
+      - go
+  become: true
+  tags:
+    - go

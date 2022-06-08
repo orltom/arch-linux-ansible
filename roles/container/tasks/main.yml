@@ -1,35 +1,29 @@
 ---
 - name: install container software
+  become: true
   pacman:
     name:
-      - docker
-      - docker-compose
-      - virtualbox
-      - linux-headers
-      - minikube
-      - kubectl
-      - helm
-  become: true
+    - docker
+    - docker-compose
+    - virtualbox
+    - linux-headers
+    - kubectl
+    - helm
+    - jq
 
 - name: enable dockerd services
-  become: yes
+  become: true
   systemd:
     name: docker.socket
     enabled: yes
     state: started
 
 - name: Add the user to group 'docker'
+  become: true
   user:
     name: "{{ username }}"
     groups: docker
     append: yes
-
-- name: Install driver
-  community.general.pacman:
-    name:
-      - docker-machine-driver-kvm2
-    state: present
-    executable: yay
 
 - name: Install container software from yay
   community.general.pacman:

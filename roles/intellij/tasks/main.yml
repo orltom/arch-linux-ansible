@@ -28,7 +28,7 @@
     - intellij
 
 - name: crate a directory
-  become: yes
+  become: true
   file:
     path: "{{ intellij_dest }}"
     state: directory
@@ -53,7 +53,7 @@
   when: not intellij.stat.exists
 
 - name: "change owner ship of intellij"
-  become: yes
+  become: true
   file:
     path: "{{ intellij_dest }}"
     state: directory
@@ -84,7 +84,7 @@
     - intellij
 
 - name: create idea link
-  become: yes
+  become: true
   file:
     src: "{{ idea_exec_path }}"
     dest: /usr/bin/idea

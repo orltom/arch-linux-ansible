@@ -1,0 +1,8 @@
+---
+- name: install office tools
+  pacman:
+    name:
+      - gimp
+  become: true
+  tags:
+    - office
