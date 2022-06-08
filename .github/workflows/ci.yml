@@ -28,4 +28,4 @@ jobs:
           targets: "modifed.yml"
           group: "github"
           hosts: "localhost"
-          skiptags: "yay dotfiles"
+          skiptags: "yay, dotfiles"
