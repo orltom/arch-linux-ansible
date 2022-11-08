@@ -22,7 +22,7 @@
   tags:
     - system
 
-- name: adding existing user '{{ username }}' to group sys
+- name: adding user to group sys
   user:
     name: "{{ username }}"
     groups: sys
@@ -30,7 +30,7 @@
   tags:
     - system
 
-- name: adding existing user '{{ username }}' to group lp
+- name: adding user to group lp
   user:
     name: "{{ username }}"
     groups: lp
