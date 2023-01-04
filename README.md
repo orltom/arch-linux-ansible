@@ -1,32 +1,38 @@
 ![](https://github.com/orltom/setup-workstation/workflows/check/badge.svg)
 
+An Ansible playbook to install Arch Linux
 
-# Setup Workstation
-Arch linux developer workstation setup with ansible.
+
+## Prerequisites
+The following packages need to be installed.
+* Install [python](https://wiki.archlinux.org/title/python)
+* Install [ansible](https://wiki.archlinux.org/title/Ansible)
+* Install [openssh](https://wiki.archlinux.org/title/OpenSSH)
+
+Create SSH Key
 ```
-ansible-playbook site.yml --ask-become-pass -u ${USERN_NAME}
+ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)" -b 4096
 ```
 
-## Prerequisite
+Enabled dhcpd
 ```
-sudo pacman -S python ansible openssh
+sudo systemctl enable dhcpcd@${NETWORK_NAME}.service
+sudo systemctl start dhcpcd@${NETWORK_NAME}.service
 ```
 
-## Execute playbook on local machine
+## Usage
 ```
 ./install
 ```
 
-## DOT files
-https://github.com/orltom/linux-user-configs
-
 ## Installation Hints
 * /sys/firmware/efi exists means system uses UEFI
-* https://wiki.archlinux.de/title/GRUB
 
-## Disclaimer
-This software is provided as source code under an Apache 2.0 license.
 
 ## Contributing
-If you are missing a feature or see a bug. Please report it.
+Please use the GitHub issue tracker to submit bugs or request features.
 
+## Disclaimer
+Copyright Orlando Tomás.
+
+Distributed under the terms of the MIT license, tool is free and open source software.

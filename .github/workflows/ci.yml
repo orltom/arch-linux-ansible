@@ -20,4 +20,5 @@ jobs:
           targets: "site.yml"
           group: "github"
           hosts: "localhost"
-          skiptags: "yay,dotfiles"
+          requirements: requirements.yml
+          tags: "yay,dotfiles"

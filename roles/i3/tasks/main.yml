@@ -35,7 +35,7 @@
       - thunar
       - thunar-archive-plugin
       - xarchiver
-      - gnome-calculator
+      - qalculate-gtk
   become: true
   tags:
     - wm
