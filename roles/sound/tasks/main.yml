@@ -17,3 +17,5 @@
       - spotify
     state: present
     executable: yay
+  tags:
+    - yay

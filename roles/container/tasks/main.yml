@@ -10,6 +10,7 @@
       - kubectl
       - helm
       - jq
+      - terraform
   tags:
     - container
 

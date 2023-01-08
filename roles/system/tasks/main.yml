@@ -21,6 +21,7 @@
     executable: yay
   tags:
     - system
+    - yay
 
 - name: adding user to group sys
   user:
