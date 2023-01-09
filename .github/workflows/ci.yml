@@ -14,12 +14,11 @@ jobs:
         with:
           targets: "site.yml"
 
-      # see https://github.com/roles-ansible/check-ansible-archlinux-latest-action/issues/5
-      # - name: ansible check with archlinux:latest
-      #   uses: roles-ansible/check-ansible-archlinux-latest-action@master
-      #   with:
-      #     targets: "site.yml"
-      #     group: "github"
-      #     hosts: "localhost"
-      #     requirements: requirements.yml
-      #     tags: "yay,dotfiles"
+      - name: ansible check with archlinux:latest
+        uses: roles-ansible/check-ansible-archlinux-latest-action@master
+        with:
+          targets: "site.yml"
+          group: "github"
+          hosts: "localhost"
+          requirements: requirements.yml
+          tags: "yay,dotfiles"
