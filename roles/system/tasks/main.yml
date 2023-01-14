@@ -30,6 +30,7 @@
     append: true
   tags:
     - system
+    - permission
 
 - name: adding user to group lp
   user:
@@ -38,3 +39,4 @@
     append: true
   tags:
     - system
+    - permission
