@@ -1,7 +1,6 @@
 ![](https://github.com/orltom/setup-workstation/workflows/check/badge.svg)
 
-An Ansible playbook to install Arch Linux
-
+This is my personal Ansible playbook to set up my developer workstation. 
 
 ## Prerequisites
 The following packages need to be installed.
@@ -25,9 +24,8 @@ sudo systemctl start dhcpcd@${NETWORK_NAME}.service
 ./install
 ```
 
-## Installation Hints
-* /sys/firmware/efi exists means system uses UEFI
-
+## Additional Information
+* ![Arch Linux Installation Guide](https://wiki.archlinux.org/title/installation_guide)
 
 ## Contributing
 Please use the GitHub issue tracker to submit bugs or request features.
