@@ -4,6 +4,7 @@
   pacman:
     name:
       - docker
+      - community/docker-buildx
       - docker-compose
       - virtualbox
       - linux-headers
