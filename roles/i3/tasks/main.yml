@@ -94,15 +94,6 @@
   tags:
     - wm
 
-- name: enable ligthdm service
-  service:
-    name: lightdm
-    enabled: true
-    state: started
-  become: true
-  tags:
-    - wm
-
 - name: Install fonts
   community.general.pacman:
     name:
@@ -125,3 +116,12 @@
   tags:
     - wm
     - yay
+
+- name: enable ligthdm service
+  service:
+    name: lightdm
+    enabled: true
+    state: started
+  become: true
+  tags:
+    - wm
