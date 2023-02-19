@@ -1,4 +1,4 @@
-name: check
+name: install
 
 on: [push, pull_request]
 

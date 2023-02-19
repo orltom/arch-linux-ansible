@@ -71,7 +71,7 @@
 
 - name: clone zsh-autosuggestions
   git:
-    repo: " https://github.com/zsh-users/zsh-autosuggestions.git"
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
     dest: "{{ home_directory }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     refspec: +refs/pull/*:refs/heads/*
     version: master
