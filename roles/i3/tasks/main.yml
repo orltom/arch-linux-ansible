@@ -81,6 +81,7 @@
   become: true
   tags:
     - wm
+    - permission
 
 - name: Copy .xintrc to home directroy
   copy:
@@ -107,7 +108,6 @@
     name:
       - ttf-google-fonts-git
       - ttf-jetbrains-mono
-      - nerd-fonts-dejavu-complete
     state: present
     executable: yay
     extra_args: --noconfirm
