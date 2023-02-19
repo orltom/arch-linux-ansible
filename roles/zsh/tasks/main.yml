@@ -39,12 +39,6 @@
   tags:
     - system
 
-# - name: Build and install font
-#   command: yay -S nerd-fonts-dejavu-complete --answerclean N --answerdiff N
-#   when: not ohmyzsh_directory.stat.exists
-#   tags:
-#     - system
-
 - name: clone omyzsh
   git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
@@ -67,7 +61,7 @@
 
 - name: clone zsh-syntax-highlighting
   git:
-    repo: " https://github.com/zsh-users/zsh-syntax-highlighting.git"
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: "{{ home_directory }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     refspec: +refs/pull/*:refs/heads/*
     version: master
