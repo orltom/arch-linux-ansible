@@ -3,6 +3,10 @@
   pacman:
     name:
       - gimp
+      - cups
+      - cups-pdf
+      - mupdf
+      - qpdf
   become: true
   tags:
     - office

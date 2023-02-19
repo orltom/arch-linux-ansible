@@ -1,6 +1,8 @@
 ![](https://github.com/orltom/setup-workstation/workflows/check/badge.svg)
+![](https://github.com/orltom/setup-workstation/workflows/install/badge.svg)
 
-This is my personal Ansible playbook to set up my developer workstation. 
+
+This is my personal Ansible playbook to set up my developer workstation.
 
 ## Prerequisites
 The following packages need to be installed.
