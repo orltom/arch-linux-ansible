@@ -23,6 +23,7 @@
     state: started
   tags:
     - container
+    - systemd
 
 - name: Add the user to group 'docker'
   become: true
@@ -39,6 +40,7 @@
     name:
       - origin-client
       - rancher-k3d-bin
+      - dive-git
     state: present
     executable: yay
   tags:

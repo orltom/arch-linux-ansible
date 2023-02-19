@@ -12,6 +12,12 @@
       - coreutils
       - tree
       - man-db
+      - wget
+      - zip
+      - tar
+      - unzip
+      - yq
+      - jq
   become: true
   tags:
     - system
