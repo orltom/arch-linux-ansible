@@ -121,7 +121,7 @@
   service:
     name: lightdm
     enabled: true
-    state: started
   become: true
   tags:
     - wm
+    - yay
