@@ -1,7 +1,7 @@
 ---
 home_directory: /root/
 intellij_dest: /opt/intellij
-openjdk_version: 11
+openjdk_version: 17
 rustup_dest: /tmp/rustup.sh
 username: root
 unix_group: root
