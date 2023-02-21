@@ -72,13 +72,11 @@
     - network
 
 - name: Install nis tools
-  community.general.pacman:
-    name:
-      - autofs
-      - ypbind-mt
-      - yp-tools
-    state: present
-    executable: yay
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - autofs
+    - ypbind-mt
+    - yp-tools
   tags:
     - system
     - nis

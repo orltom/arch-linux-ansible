@@ -1,10 +1,8 @@
 ---
 - name: Install google cloud sdk
-  community.general.pacman:
-    name:
+  command: yay -S --noconfirm {{ item }}
+  with_items:
       - google-cloud-sdk
-    state: present
-    executable: yay
   tags:
     - gcp
     - cloud

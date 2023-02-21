@@ -1,10 +1,8 @@
 ---
 - name: Install video chat tools
-  community.general.pacman:
-    name:
-      - zoom
-    state: present
-    executable: yay
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - zoom
   tags:
     - chat
     - yay

@@ -14,11 +14,9 @@
     - system
 
 - name: Install printer driver and tools
-  community.general.pacman:
-    name:
-      - hplip
-    state: present
-    executable: yay
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - hplip
   tags:
     - system
     - yay

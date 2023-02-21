@@ -12,10 +12,8 @@
     - sound
 
 - name: install spotify
-  community.general.pacman:
-    name:
-      - spotify
-    state: present
-    executable: yay
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - spotify
   tags:
     - yay

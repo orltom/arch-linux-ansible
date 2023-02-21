@@ -7,7 +7,7 @@
     - system
     - yay
 
-- name: crate yay directory
+- name: create yay directory
   become: true
   file:
     path: /opt/yay
@@ -34,6 +34,14 @@
   command: makepkg -si --noconfirm
   args:
     chdir: /opt/yay
+  become: false
+  when: not yay_bin.stat.exists
+  tags:
+    - system
+    - yay
+
+- name: Update yay chache
+  command: yay -Sy
   become: false
   tags:
     - system

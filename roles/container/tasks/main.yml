@@ -36,13 +36,11 @@
     - permission
 
 - name: Install container software from yay
-  community.general.pacman:
-    name:
-      - origin-client
-      - rancher-k3d-bin
-      - dive-git
-    state: present
-    executable: yay
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - origin-client
+    - rancher-k3d-bin
+    - dive-git
   tags:
     - container
     - yay

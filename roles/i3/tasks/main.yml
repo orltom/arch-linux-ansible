@@ -95,24 +95,18 @@
     - wm
 
 - name: Install fonts
-  community.general.pacman:
-    name:
-      - ttf-google-fonts-git
-      - ttf-jetbrains-mono
-    state: present
-    executable: yay
-    extra_args: --noconfirm
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - ttf-google-fonts-git
+    - ttf-jetbrains-mono
   tags:
     - wm
     - yay
 
 - name: Install theme
-  community.general.pacman:
-    name:
-      - arc-icon-theme-git
-    state: present
-    executable: yay
-    extra_args: --noconfirm
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - arc-icon-theme-git
   tags:
     - wm
     - yay
