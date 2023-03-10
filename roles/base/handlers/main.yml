@@ -1,0 +1,7 @@
+---
+- name: enable systemd services
+  become: true
+  systemd:
+    name: systemd-resolved
+    enabled: true
+    state: started

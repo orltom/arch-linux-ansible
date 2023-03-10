@@ -26,6 +26,7 @@
     name: "{{ username }}"
     groups: sys
     append: true
+  become: true
   tags:
     - system
     - permission
@@ -35,6 +36,41 @@
     name: "{{ username }}"
     groups: lp
     append: true
+  become: true
   tags:
     - system
     - permission
+
+- name: check if vim themes
+  stat:
+    path: "{{ home_directory }}/.vim/pack/themes/start"
+  register: vim_theme_path
+  tags:
+    - system
+
+- name: Create vim themes
+  file:
+    path: "{{ home_directory }}/.vim/pack/themes/start"
+    state: directory
+    mode: 0750
+  tags:
+    - system
+    - dotfiles
+
+- name: clone vim dracula
+  git:
+    repo: https://github.com/dracula/vim.git
+    dest: "{{ home_directory }}/.vim/pack/themes/start/dracula"
+    refspec: +refs/pull/*:refs/heads/*
+    version: master
+  when: not vim_theme_path.stat.exists
+  tags:
+    - system
+
+- name: install docking station packages
+  pacman:
+    name:
+      - bolt
+  become: true
+  tags:
+    - system

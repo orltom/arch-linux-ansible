@@ -9,6 +9,9 @@
       - i3lock
       - i3status
       - i3blocks
+      - upower
+      - xautolock
+      - xsettingsd
   become: true
   tags:
     - wm
@@ -93,23 +96,6 @@
     force: false
   tags:
     - wm
-
-- name: Install fonts
-  command: yay -S --noconfirm {{ item }}
-  with_items:
-    - ttf-google-fonts-git
-    - ttf-jetbrains-mono
-  tags:
-    - wm
-    - yay
-
-- name: Install theme
-  command: yay -S --noconfirm {{ item }}
-  with_items:
-    - arc-icon-theme-git
-  tags:
-    - wm
-    - yay
 
 - name: enable ligthdm service
   service:

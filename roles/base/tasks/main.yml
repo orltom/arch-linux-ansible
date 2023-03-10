@@ -66,10 +66,20 @@
       - gnu-netcat
       - iftop
       - iwd
+      - dialog
   become: true
   tags:
     - system
     - network
+
+- name: Install update systemd resolver
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - aur/openvpn-update-systemd-resolved
+  tags:
+    - system
+    - network
+    - yay
 
 - name: Install nis tools
   command: yay -S --noconfirm {{ item }}
