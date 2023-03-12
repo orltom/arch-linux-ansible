@@ -2,7 +2,7 @@
 - name: Install google cloud sdk
   command: yay -S --noconfirm {{ item }}
   with_items:
-      - google-cloud-sdk
+    - google-cloud-sdk
   tags:
     - gcp
     - cloud
