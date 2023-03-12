@@ -1,8 +1,8 @@
 ![](https://github.com/orltom/setup-workstation/workflows/check/badge.svg)
 ![](https://github.com/orltom/setup-workstation/workflows/install/badge.svg)
 
-
-This is my personal Ansible playbook to set up my developer workstation.
+# Automated Arch Linux Setup
+This ansible playbook automates my personal Arch Linux setup. All dotfiles are kept in an independent repository.
 
 ## Prerequisites
 The following packages need to be installed.
@@ -15,12 +15,6 @@ Create SSH Key
 ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)" -b 4096
 ```
 
-Enabled dhcpd
-```shell
-sudo systemctl enable dhcpcd@${NETWORK_NAME}.service
-sudo systemctl start dhcpcd@${NETWORK_NAME}.service
-```
-
 ## Usage
 ```shell
 ./install
@@ -28,6 +22,7 @@ sudo systemctl start dhcpcd@${NETWORK_NAME}.service
 
 ## Additional Information
 * [Arch Linux Installation Guide](https://wiki.archlinux.org/title/installation_guide)
+* [Disk encryption)[https://github.com/id101010/ansible-archlinux/blob/main/doc/INSTALL_EFI.md]
 
 ## Contributing
 Please use the GitHub issue tracker to submit bugs or request features.
