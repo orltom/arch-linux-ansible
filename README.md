@@ -10,11 +10,6 @@ The following packages need to be installed.
 * Install [ansible](https://wiki.archlinux.org/title/Ansible)
 * Install [openssh](https://wiki.archlinux.org/title/OpenSSH)
 
-Create SSH Key
-```shell
-ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)" -b 4096
-```
-
 ## Usage
 ```shell
 ./install
@@ -22,7 +17,7 @@ ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)" -b 4096
 
 ## Additional Information
 * [Arch Linux Installation Guide](https://wiki.archlinux.org/title/installation_guide)
-* [Disk encryption)[https://github.com/id101010/ansible-archlinux/blob/main/doc/INSTALL_EFI.md]
+* [Disk encryption](https://github.com/id101010/ansible-archlinux/blob/main/doc/INSTALL_EFI.md]
 
 ## Contributing
 Please use the GitHub issue tracker to submit bugs or request features.
