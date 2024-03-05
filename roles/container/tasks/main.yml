@@ -11,7 +11,9 @@
       - kubectl
       - helm
       - jq
+      - yq
       - terraform
+      - terragrunt
   tags:
     - container
 

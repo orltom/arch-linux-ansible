@@ -1,0 +1,8 @@
+---
+- name: install nodejs
+  pacman:
+    name:
+      - nodejs
+  become: true
+  tags:
+    - nodejs

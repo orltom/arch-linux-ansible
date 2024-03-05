@@ -19,6 +19,7 @@
       - unzip
       - yq
       - jq
+      - ntp
   become: true
   tags:
     - system
@@ -34,11 +35,12 @@
     - system
     - development
 
-- name: Install utility tools
-  package:
-    name:
-      - keepass
-  become: true
+- name: Install password tools
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - keepass
+    - 1password
+    - 1password-cli
   tags:
     - system
 

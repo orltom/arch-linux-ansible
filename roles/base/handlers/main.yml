@@ -5,3 +5,10 @@
     name: systemd-resolved
     enabled: true
     state: started
+
+- name: enable ntp services
+  become: true
+  systemd:
+    name: ntpd
+    enabled: true
+    state: started

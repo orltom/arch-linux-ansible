@@ -74,3 +74,12 @@
   become: true
   tags:
     - system
+
+- name: install terminal tools
+  pacman:
+    name:
+      - ranger
+      - tree
+  become: true
+  tags:
+    - system
