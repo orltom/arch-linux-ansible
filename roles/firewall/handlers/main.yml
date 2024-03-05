@@ -1,5 +1,5 @@
 ---
-- name: enable ufw services
+- name: Enable ufw services
   become: true
   systemd:
     name: ufw

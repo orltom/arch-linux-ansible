@@ -1,5 +1,5 @@
 ---
-- name: install i3
+- name: Installl i3
   pacman:
     name:
       - xorg
@@ -16,7 +16,7 @@
   tags:
     - wm
 
-- name: install lightdm
+- name: Installl lightdm
   pacman:
     name:
       - lightdm
@@ -25,7 +25,7 @@
   tags:
     - wm
 
-- name: install utility tools
+- name: Installl utility tools
   pacman:
     name:
       - rofi
@@ -42,7 +42,7 @@
   tags:
     - wm
 
-- name: install fonts
+- name: Installl fonts
   pacman:
     name:
       - ttf-jetbrains-mono
@@ -54,7 +54,7 @@
   tags:
     - wm
 
-- name: install default graphic drivers
+- name: Installl default graphic drivers
   pacman:
     name:
       - xf86-video-fbdev
@@ -63,7 +63,7 @@
   tags:
     - wm
 
-- name: install terminal
+- name: Installl terminal
   pacman:
     name:
       - gnome-terminal
@@ -72,7 +72,7 @@
   tags:
     - wm
 
-- name: adding existing user to some multimedia unix groups
+- name: Adding existing user to some multimedia unix groups
   user:
     name: "{{ username }}"
     groups:
@@ -91,12 +91,12 @@
     content: |
       setxbmap de
       exec i3
-    mode: 0640
+    mode: "0640"
     force: false
   tags:
     - wm
 
-- name: enable ligthdm service
+- name: Enable ligthdm service
   service:
     name: lightdm
     enabled: true

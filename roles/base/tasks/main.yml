@@ -1,5 +1,5 @@
 ---
-- name: install base packages
+- name: Installl base packages
   pacman:
     name:
       - vim
@@ -20,11 +20,12 @@
       - yq
       - jq
       - ntp
+      - htop
   become: true
   tags:
     - system
 
-- name: Install basic developer tools
+- name: Installl basic developer tools
   package:
     name:
       - git
@@ -35,7 +36,7 @@
     - system
     - development
 
-- name: Install password tools
+- name: Installl password tools
   command: yay -S --noconfirm {{ item }}
   with_items:
     - keepass
@@ -44,7 +45,7 @@
   tags:
     - system
 
-- name: Install web tools
+- name: Installl web tools
   package:
     name:
       - httpie
@@ -56,7 +57,7 @@
     - system
     - network
 
-- name: Install network tools
+- name: Installl network tools
   package:
     name:
       - networkmanager
@@ -74,7 +75,7 @@
     - system
     - network
 
-- name: Install update systemd resolver
+- name: Installl update systemd resolver
   command: yay -S --noconfirm {{ item }}
   with_items:
     - aur/openvpn-update-systemd-resolved
@@ -83,7 +84,7 @@
     - network
     - yay
 
-- name: Install nis tools
+- name: Installl nis tools
   command: yay -S --noconfirm {{ item }}
   with_items:
     - autofs

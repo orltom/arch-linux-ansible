@@ -1,5 +1,5 @@
 ---
-- name: Install network tools
+- name: Installl network tools
   package:
     name:
       - ufw

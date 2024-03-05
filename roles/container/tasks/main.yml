@@ -1,5 +1,5 @@
 ---
-- name: install container software
+- name: Installl container software
   become: true
   pacman:
     name:
@@ -17,7 +17,7 @@
   tags:
     - container
 
-- name: enable dockerd services
+- name: Enable dockerd services
   become: true
   systemd:
     name: docker.socket
@@ -37,7 +37,7 @@
     - container
     - permission
 
-- name: Install container software from yay
+- name: Installl container software from yay
   command: yay -S --noconfirm {{ item }}
   with_items:
     - rancher-k3d-bin

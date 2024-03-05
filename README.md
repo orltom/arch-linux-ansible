@@ -6,9 +6,22 @@ This ansible playbook automates my personal Arch Linux setup. All dotfiles are k
 
 ## Prerequisites
 The following packages need to be installed.
-* Install [python](https://wiki.archlinux.org/title/python)
-* Install [ansible](https://wiki.archlinux.org/title/Ansible)
-* Install [openssh](https://wiki.archlinux.org/title/OpenSSH)
+```shell
+dhcpd netctl iwctl dnsutils ansible git openssh wpa_supplicant ansible
+```
+
+Create SSH Key
+```shell
+ssh-keygen -C "$(whoami)@$(uname -n)-$(date -I)" -b 4096
+```
+
+Enabled dhcpd
+```shell
+sudo systemctl enable dhcpcd@${NETWORK_NAME}.service
+sudo systemctl start dhcpcd@${NETWORK_NAME}.service
+```
+
+For more information see https://github.com/id101010/ansible-archlinux/blob/main/doc/INSTALL_EFI.md
 
 ## Usage
 ```shell

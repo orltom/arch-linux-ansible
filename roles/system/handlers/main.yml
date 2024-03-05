@@ -1,19 +1,19 @@
 ---
-- name: enable acpid services
+- name: Enable acpid services
   become: true
   systemd:
     name: acpid
     enabled: true
     state: started
 
-- name: enable avahi-daemon services
+- name: Enable avahi-daemon services
   become: true
   systemd:
     name: avahi-daemon
     enabled: true
     state: started
 
-- name: enable cups services
+- name: Enable cups services
   become: true
   systemd:
     name: cups

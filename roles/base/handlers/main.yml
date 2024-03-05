@@ -1,12 +1,12 @@
 ---
-- name: enable systemd services
+- name: Enable systemd services
   become: true
   systemd:
     name: systemd-resolved
     enabled: true
     state: started
 
-- name: enable ntp services
+- name: Enable ntp services
   become: true
   systemd:
     name: ntpd

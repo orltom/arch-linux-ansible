@@ -10,7 +10,7 @@
     - development
     - rust
 
-- name: chmod of rustup.sh
+- name: Change file permission of rustup.sh
   become: true
   file:
     path: "{{ rustup_dest }}"
