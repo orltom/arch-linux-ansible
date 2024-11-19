@@ -1,5 +1,5 @@
 ---
-- name: install Open JDK
+- name: Install Open JDK
   pacman:
     name:
       - jdk{{ openjdk_version }}-openjdk

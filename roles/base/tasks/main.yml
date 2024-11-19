@@ -1,5 +1,5 @@
 ---
-- name: install base packages
+- name: Install base packages
   pacman:
     name:
       - vim
@@ -86,7 +86,6 @@
 - name: Install nis tools
   command: yay -S --noconfirm {{ item }}
   with_items:
-    - autofs
     - ypbind-mt
     - yp-tools
   tags:

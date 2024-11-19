@@ -1,5 +1,6 @@
 ---
 - hosts: localhost
+  name: full
   connection: local
   roles:
     - pacman

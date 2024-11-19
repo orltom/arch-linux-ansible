@@ -1,8 +1,0 @@
----
-- name: Install video chat tools
-  command: yay -S --noconfirm {{ item }}
-  with_items:
-    - zoom
-  tags:
-    - chat
-    - yay

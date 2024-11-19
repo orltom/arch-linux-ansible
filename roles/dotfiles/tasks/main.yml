@@ -1,5 +1,5 @@
 ---
-- name: check if config directory exists
+- name: Check if config directory exists
   stat:
     path: "{{ home_directory }}/repositories/configs"
   register: dot_files_directory
@@ -7,7 +7,7 @@
     - system
     - dotfiles
 
-- name: clone dot-files
+- name: Clone dot-files
   git:
     repo: git@github.com:orltom/linux-user-configs.git
     dest: "{{ home_directory }}/repositories/configs"
@@ -30,7 +30,7 @@
     - system
     - dotfiles
 
-- name: add config links
+- name: Add config links
   file:
     src: "{{ home_directory }}/repositories/configs/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
@@ -51,7 +51,7 @@
     - dotfiles
     - permission
 
-- name: link folder
+- name: Link folder
   file:
     src: "{{ home_directory }}/repositories/configs/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
@@ -72,12 +72,12 @@
   file:
     path: "{{ home_directory }}/.config"
     state: directory
-    mode: 0750
+    mode: "0750"
   tags:
     - system
     - dotfiles
 
-- name: add .config programm links
+- name: Add .config programm links
   file:
     src: "{{ home_directory }}/repositories/configs/.config/{{ item }}"
     dest: "{{ home_directory }}/.config/{{ item }}"
@@ -101,7 +101,7 @@
     - dotfiles
     - permission
 
-- name: set gnome terimal without menu bar
+- name: Set gnome terimal without menu bar
   command: gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
   when: not dot_files_directory.stat.exists
   tags:

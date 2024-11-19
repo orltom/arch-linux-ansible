@@ -1,5 +1,5 @@
 ---
-- name: check yay already exists
+- name: Check yay already exists
   stat:
     path: /usr/bin/yay
   register: yay_bin
@@ -7,7 +7,7 @@
     - system
     - yay
 
-- name: create yay directory
+- name: Create yay directory
   become: true
   file:
     path: /opt/yay
@@ -19,7 +19,7 @@
     - system
     - yay
 
-- name: clone yay
+- name: Clone yay
   git:
     repo: https://aur.archlinux.org/yay-git.git
     dest: /opt/yay

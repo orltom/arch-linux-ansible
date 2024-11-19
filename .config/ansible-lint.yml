@@ -1,0 +1,6 @@
+exclude_paths:
+  - roles/rust/handlers
+  - roles/firewall/handlers
+  - roles/system/handlers
+  - roles/base/handlers
+  - roles/intellij

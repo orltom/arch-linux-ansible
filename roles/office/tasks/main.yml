@@ -1,5 +1,5 @@
 ---
-- name: install office tools
+- name: Install office tools
   pacman:
     name:
       - gimp

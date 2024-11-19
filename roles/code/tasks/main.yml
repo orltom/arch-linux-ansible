@@ -1,5 +1,5 @@
 ---
-- name: install visual studio code
+- name: Install visual studio code
   pacman:
     name: code
   become: true

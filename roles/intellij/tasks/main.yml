@@ -1,7 +1,7 @@
 ---
-- name: find latest version
+- name: Find latest version
   uri:
-    url: https://data.services.jetbrains.com/products/releases?code=IIU%2CIIC&latest=true&type=release
+    url: "https://data.services.jetbrains.com/products/releases?code=IIU%2CIIC&latest=true&type=release"
     return_content: true
     validate_certs: false
     body_format: json
@@ -11,7 +11,7 @@
     - ide
     - intellij
 
-- name: extract intellij version
+- name: Extract intellij version
   set_fact:
     intellij_version: "{{ intellij_releases_response.json.IIU.0.version }}"
   tags:
@@ -19,7 +19,7 @@
     - ide
     - intellij
 
-- name: check intellij is installed
+- name: Check intellij is installed
   stat:
     path: "{{ intellij_dest }}"
   register: intellij
@@ -28,24 +28,24 @@
     - ide
     - intellij
 
-- name: crate a directory
+- name: Crate a directory
   become: true
   file:
     path: "{{ intellij_dest }}"
     state: directory
     group: users
-    mode: 0770
+    mode: : "0770"
   tags:
     - development
     - ide
     - intellij
   when: not intellij.stat.exists
 
-- name: download intellij
+- name: Download intellij
   unarchive:
-    src: https://download.jetbrains.com/idea/ideaIU-{{ intellij_version }}.tar.gz
+    src: "https://download.jetbrains.com/idea/ideaIU-{{ intellij_version }}.tar.gz"
     dest: "{{ intellij_dest }}"
-    mode: 0770
+    mode: : "0770"
     remote_src: true
   tags:
     - development
@@ -53,19 +53,19 @@
     - intellij
   when: not intellij.stat.exists
 
-- name: change owner ship of intellij
+- name: Change owner ship of intellij
   become: true
   file:
     path: "{{ intellij_dest }}"
     state: directory
     recurse: true
-    mode: 0750
+    mode: "0750"
   tags:
     - development
     - ide
     - intellij
 
-- name: find intellij exec file
+- name: Find intellij exec file
   find:
     paths: "{{ intellij_dest }}"
     recurse: true
@@ -76,7 +76,7 @@
     - ide
     - intellij
 
-- name: extract intellij exec path
+- name: Extract intellij exec path
   set_fact:
     idea_exec_path: "{{ intellij_exec_results.files[0].path }}"
   tags:
@@ -84,7 +84,7 @@
     - ide
     - intellij
 
-- name: create idea link
+- name: Create idea link
   become: true
   file:
     src: "{{ idea_exec_path }}"

@@ -1,5 +1,5 @@
 ---
-- name: install container software
+- name: Install container software
   become: true
   pacman:
     name:
@@ -17,7 +17,7 @@
   tags:
     - container
 
-- name: enable dockerd services
+- name: Enable dockerd services
   become: true
   systemd:
     name: docker.socket

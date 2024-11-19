@@ -1,5 +1,5 @@
 ---
-- name: install sound packages
+- name: Install sound packages
   pacman:
     name:
       - pamixer
@@ -11,7 +11,7 @@
   tags:
     - sound
 
-- name: install spotify
+- name: Install spotify
   command: yay -S --noconfirm {{ item }}
   with_items:
     - spotify

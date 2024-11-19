@@ -1,5 +1,5 @@
 ---
-- name: check if ZSH exists
+- name: Check if ZSH exists
   stat:
     path: /usr/bin/zsh
   register: zsh_path
@@ -25,21 +25,21 @@
   tags:
     - system
 
-- name: set ZSH as default shell
+- name: Set ZSH as default shell
   become: true
   shell: chsh -s $(which zsh)
   when: zsh_path.stat.exists
   tags:
     - system
 
-- name: check if ohmyzsh directory exists
+- name: Check if ohmyzsh directory exists
   stat:
     path: "{{ home_directory }}/.oh-my-zsh"
   register: ohmyzsh_directory
   tags:
     - system
 
-- name: clone omyzsh
+- name: Clone omyzsh
   git:
     repo: https://github.com/ohmyzsh/ohmyzsh.git
     dest: "{{ home_directory }}/.oh-my-zsh"
@@ -49,7 +49,7 @@
   tags:
     - system
 
-- name: clone powerline
+- name: Clone powerline
   git:
     repo: https://github.com/bhilburn/powerlevel9k.git
     dest: "{{ home_directory }}/.oh-my-zsh/custom/themes/powerlevel9k"
@@ -59,7 +59,7 @@
   tags:
     - system
 
-- name: clone zsh-syntax-highlighting
+- name: Clone zsh-syntax-highlighting
   git:
     repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
     dest: "{{ home_directory }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
@@ -69,7 +69,7 @@
   tags:
     - system
 
-- name: clone zsh-autosuggestions
+- name: Clone zsh-autosuggestions
   git:
     repo: https://github.com/zsh-users/zsh-autosuggestions.git
     dest: "{{ home_directory }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"

@@ -1,5 +1,5 @@
 ---
-- name: install core packages
+- name: Install core packages
   pacman:
     name:
       - acpid
@@ -21,7 +21,7 @@
     - system
     - yay
 
-- name: adding user to group sys
+- name: Adding user to group sys
   user:
     name: "{{ username }}"
     groups: sys
@@ -31,7 +31,7 @@
     - system
     - permission
 
-- name: adding user to group lp
+- name: Adding user to group lp
   user:
     name: "{{ username }}"
     groups: lp
@@ -41,7 +41,7 @@
     - system
     - permission
 
-- name: check if vim themes
+- name: Check if vim themes
   stat:
     path: "{{ home_directory }}/.vim/pack/themes/start"
   register: vim_theme_path
@@ -52,12 +52,12 @@
   file:
     path: "{{ home_directory }}/.vim/pack/themes/start"
     state: directory
-    mode: 0750
+    mode: "0750"
   tags:
     - system
     - dotfiles
 
-- name: clone vim dracula
+- name: Clone§ vim dracula
   git:
     repo: https://github.com/dracula/vim.git
     dest: "{{ home_directory }}/.vim/pack/themes/start/dracula"
@@ -67,7 +67,7 @@
   tags:
     - system
 
-- name: install docking station packages
+- name: Install docking station packages
   pacman:
     name:
       - bolt
@@ -75,7 +75,7 @@
   tags:
     - system
 
-- name: install terminal tools
+- name: Install terminal tools
   pacman:
     name:
       - ranger

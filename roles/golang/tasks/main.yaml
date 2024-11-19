@@ -1,5 +1,5 @@
 ---
-- name: install go
+- name: Install go
   pacman:
     name:
       - go

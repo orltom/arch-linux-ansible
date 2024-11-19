@@ -1,5 +1,5 @@
 ---
-- name: install nodejs
+- name: Install nodejs
   pacman:
     name:
       - nodejs
