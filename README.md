@@ -9,6 +9,7 @@ The following packages need to be installed.
 * Install [python](https://wiki.archlinux.org/title/python)
 * Install [ansible](https://wiki.archlinux.org/title/Ansible)
 * Install [openssh](https://wiki.archlinux.org/title/OpenSSH)
+* Create SSH keys via `ssh-keygen`
 
 ## Usage
 ```shell
