@@ -1,5 +1,5 @@
-![](https://github.com/orltom/setup-workstation/workflows/check/badge.svg)
-![](https://github.com/orltom/setup-workstation/workflows/install/badge.svg)
+[![check](https://github.com/orltom/arch-linux-ansible/actions/workflows/lint.yml/badge.svg?branch=main)](https://github.com/orltom/arch-linux-ansible/actions/workflows/lint.yml)
+[![Install](https://github.com/orltom/arch-linux-ansible/actions/workflows/install.yml/badge.svg)](https://github.com/orltom/arch-linux-ansible/actions/workflows/install.yml)
 
 # Automated Arch Linux Setup
 This ansible playbook automates my personal Arch Linux setup. All dotfiles are kept in an independent repository.
