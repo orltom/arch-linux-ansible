@@ -9,6 +9,7 @@
       - bluez
       - bluez-utils
       - openssh
+      - dhcpcd
   become: true
   tags:
     - system

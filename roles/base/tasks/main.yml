@@ -60,6 +60,7 @@
   package:
     name:
       - networkmanager
+      - dhcpcd
       - openssl
       - openvpn
       - remmina

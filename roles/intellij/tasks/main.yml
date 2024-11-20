@@ -34,7 +34,7 @@
     path: "{{ intellij_dest }}"
     state: directory
     group: users
-    mode: : "0770"
+    mode: "0770"
   tags:
     - development
     - ide
@@ -45,7 +45,7 @@
   unarchive:
     src: "https://download.jetbrains.com/idea/ideaIU-{{ intellij_version }}.tar.gz"
     dest: "{{ intellij_dest }}"
-    mode: : "0770"
+    mode: "0770"
     remote_src: true
   tags:
     - development
