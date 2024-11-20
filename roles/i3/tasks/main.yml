@@ -91,7 +91,7 @@
     content: |
       setxbmap de
       exec i3
-    mode: 0640
+    mode: "0640"
     force: false
   tags:
     - wm

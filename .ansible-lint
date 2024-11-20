@@ -3,6 +3,10 @@ exclude_paths:
  - .github/
  - .cache/
  - .ansible-lint
+ - roles/development/handlers
+ - roles/system/handlers
+ - roles/base/handlers
+ - roles/intellij/handlers
 
 use_default_rules: true
 

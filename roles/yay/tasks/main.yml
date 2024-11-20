@@ -13,7 +13,7 @@
     path: /opt/yay
     state: directory
     group: users
-    mode: 0775
+    mode: "0775"
   when: not yay_bin.stat.exists
   tags:
     - system

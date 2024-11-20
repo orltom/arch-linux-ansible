@@ -43,6 +43,7 @@
     - 1password-cli
   tags:
     - system
+    - yay
 
 - name: Install web tools
   package:

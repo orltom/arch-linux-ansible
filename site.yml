@@ -1,6 +1,6 @@
 ---
-- hosts: localhost
-  name: Developement Machine
+- name: Developement Machine
+  hosts: localhost
   connection: local
   roles:
     - pacman

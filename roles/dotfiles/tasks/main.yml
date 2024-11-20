@@ -108,3 +108,29 @@
   tags:
     - system
     - dotfiles
+
+- name: Check if vim themes
+  stat:
+    path: "{{ home_directory }}/.vim/pack/themes/start"
+  register: vim_theme_path
+  tags:
+    - system
+
+- name: Create vim themes
+  file:
+    path: "{{ home_directory }}/.vim/pack/themes/start"
+    state: directory
+    mode: "0750"
+  tags:
+    - system
+    - dotfiles
+
+- name: Clone vim dracula
+  git:
+    repo: https://github.com/dracula/vim.git
+    dest: "{{ home_directory }}/.vim/pack/themes/start/dracula"
+    refspec: +refs/pull/*:refs/heads/*
+    version: master
+  when: not vim_theme_path.stat.exists
+  tags:
+    - system

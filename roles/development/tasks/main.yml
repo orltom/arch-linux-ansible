@@ -24,7 +24,7 @@
   pacman:
     name:
       - jdk{{ openjdk_version }}-openjdk
-      - openjdk{{ openjdk_version }}-src      
+      - openjdk{{ openjdk_version }}-src
       - openjdk{{ openjdk_version }}-doc
     state: present
   become: true
