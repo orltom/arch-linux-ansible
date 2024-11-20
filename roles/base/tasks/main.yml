@@ -20,6 +20,7 @@
       - yq
       - jq
       - ntp
+      - bat
   become: true
   tags:
     - system
@@ -36,7 +37,7 @@
     - development
 
 - name: Install password tools
-  command: yay -S --noconfirm {{ item }}
+  command: yay -S --needed --noconfirm {{ item }}
   with_items:
     - keepass
     - 1password
@@ -76,7 +77,7 @@
     - network
 
 - name: Install update systemd resolver
-  command: yay -S --noconfirm {{ item }}
+  command: yay -S --needed --noconfirm {{ item }}
   with_items:
     - aur/openvpn-update-systemd-resolved
   tags:
@@ -85,7 +86,7 @@
     - yay
 
 - name: Install nis tools
-  command: yay -S --noconfirm {{ item }}
+  command: yay -S --needed --noconfirm {{ item }}
   with_items:
     - ypbind-mt
     - yp-tools
@@ -109,10 +110,19 @@
     - system
 
 - name: Install spotify
-  command: yay -S --noconfirm {{ item }}
+  command: yay -S --needed --noconfirm {{ item }}
   with_items:
     - spotify
   tags:
     - yay
     - system
     - sound
+
+- name: Install terminal tools
+  pacman:
+    name:
+      - ranger
+      - tree
+  become: true
+  tags:
+    - system

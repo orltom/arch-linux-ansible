@@ -1,6 +1,6 @@
 ---
 - name: Install google cloud sdk
-  command: yay -S --noconfirm {{ item }}
+  command: yay -S --needed --noconfirm {{ item }}
   with_items:
     - google-cloud-sdk
   tags:

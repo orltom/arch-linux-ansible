@@ -27,7 +27,7 @@
     - system
 
 - name: Install printer driver and tools
-  command: yay -S --noconfirm {{ item }}
+  command: yay -S --needed --noconfirm {{ item }}
   with_items:
     - hplip
   tags:
@@ -58,15 +58,6 @@
   pacman:
     name:
       - bolt
-  become: true
-  tags:
-    - system
-
-- name: Install terminal tools
-  pacman:
-    name:
-      - ranger
-      - tree
   become: true
   tags:
     - system

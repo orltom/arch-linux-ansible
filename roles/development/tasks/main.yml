@@ -37,6 +37,8 @@
     name:
       - python3
       - python-pip
+      - python-distutils-extra
+      - python-virtualenv
   become: true
   tags:
     - development

@@ -38,7 +38,7 @@
     - permission
 
 - name: Install container software from yay
-  command: yay -S --noconfirm {{ item }}
+  command: yay -S --needed --noconfirm {{ item }}
   with_items:
     - rancher-k3d-bin
     - dive-git
