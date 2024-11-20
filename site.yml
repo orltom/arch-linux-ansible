@@ -1,24 +1,17 @@
 ---
 - hosts: localhost
-  name: full
+  name: Developement Machine
   connection: local
   roles:
     - pacman
     - yay
     - system
     - base
-    - firewall
     - zsh
     - i3
     - container
     - gcp
-    - java
-    - golang
-    - rust
-    - python
-    - nodejs
+    - development
     - intellij
     - code
-    - sound
-    - office
     - dotfiles

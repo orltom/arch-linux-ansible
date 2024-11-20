@@ -19,3 +19,10 @@
     name: cups
     enabled: true
     state: started
+
+- name: Enable ufw services
+  become: true
+  systemd:
+    name: ufw
+    enabled: true
+    state: started

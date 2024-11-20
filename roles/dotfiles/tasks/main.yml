@@ -96,6 +96,7 @@
     - remmina
     - ranger
     - fontconfig
+    - xfce4
   tags:
     - system
     - dotfiles

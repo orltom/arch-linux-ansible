@@ -14,6 +14,18 @@
   tags:
     - system
 
+- name: Install sound packages
+  pacman:
+    name:
+      - pamixer
+      - pulseaudio
+      - pulseaudio-alsa
+      - alsa-utils
+      - pavucontrol
+  become: true
+  tags:
+    - system
+
 - name: Install printer driver and tools
   command: yay -S --noconfirm {{ item }}
   with_items:
@@ -84,3 +96,14 @@
   become: true
   tags:
     - system
+
+- name: Install firewall tools
+  package:
+    name:
+      - ufw
+      - gufw
+  become: true
+  tags:
+    - system
+    - network
+    - firewall

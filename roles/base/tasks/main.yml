@@ -60,7 +60,6 @@
   package:
     name:
       - networkmanager
-      - dhcpcd
       - openssl
       - openvpn
       - remmina
@@ -93,3 +92,26 @@
     - system
     - nis
     - yay
+
+- name: Install office tools
+  pacman:
+    name:
+      - gimp
+      - cups
+      - cups-pdf
+      - mupdf
+      - qpdf
+      - extra/mattermost-desktop
+  become: true
+  tags:
+    - office
+    - system
+
+- name: Install spotify
+  command: yay -S --noconfirm {{ item }}
+  with_items:
+    - spotify
+  tags:
+    - yay
+    - system
+    - sound
