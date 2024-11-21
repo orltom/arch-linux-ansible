@@ -69,7 +69,8 @@
   find:
     paths: "{{ intellij_dest }}"
     recurse: true
-    patterns: idea.sh
+    patterns: idea
+    file_type: file
   register: intellij_exec_results
   tags:
     - development

@@ -5,3 +5,26 @@
   become: true
   tags:
     - ide
+
+- name: Install extension
+  command: /usr/bin/code --install-extension {{ item }}
+  with_items:
+    - golang.Go
+    - redhat.vscode-yaml
+    - rust-lang.rust
+    - ms-python.python
+    - redhat.ansible
+    # TODO Install line excluder
+  tags:
+    - ide
+
+- name: Link settings file from dot folder
+  file:
+    src: "{{ home_directory }}/repositories/configs/.config/code/user/settings.json"
+    dest: "{{ home_directory }}/.config/Code - OSS/User/settings.json"
+    owner: "{{ username }}"
+    group: "{{ unix_group }}"
+    state: link
+  tags:
+    - ide
+    - dotfiles
