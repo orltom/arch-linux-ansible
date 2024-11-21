@@ -10,6 +10,9 @@
       - bluez-utils
       - openssh
       - dhcpcd
+      - sudo
+      - fwupd
+      - udisks2
   become: true
   tags:
     - system

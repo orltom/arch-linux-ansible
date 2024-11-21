@@ -21,6 +21,9 @@
       - jq
       - ntp
       - bat
+      - direnv
+      - htop
+      - dmidecode
   become: true
   tags:
     - system
@@ -56,12 +59,13 @@
   become: true
   tags:
     - system
-    - network
+    - web
 
 - name: Install network tools
   package:
     name:
       - networkmanager
+      - netctl
       - openssl
       - openvpn
       - remmina
@@ -71,6 +75,7 @@
       - iftop
       - iwd
       - dialog
+      - wpa_supplicant
   become: true
   tags:
     - system
@@ -99,10 +104,12 @@
   pacman:
     name:
       - gimp
+      - galculator
       - cups
       - cups-pdf
       - mupdf
       - qpdf
+      - xfce4-screenshooter
       - extra/mattermost-desktop
   become: true
   tags:
@@ -126,3 +133,15 @@
   become: true
   tags:
     - system
+
+- name: Add calculator link
+  file:
+    src: "/usr/bin/galculator"
+    dest: "/usr/bin/calculator"
+    owner: "{{ username }}"
+    group: "{{ unix_group }}"
+    state: link
+  become: true
+  tags:
+    - system
+    - permission
