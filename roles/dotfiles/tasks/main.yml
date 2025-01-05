@@ -1,7 +1,7 @@
 ---
 - name: Check if config directory exists
   stat:
-    path: "{{ home_directory }}/repositories/configs"
+    path: "{{ home_directory }}/repositories/dotfiles"
   register: dot_files_directory
   tags:
     - system
@@ -9,8 +9,8 @@
 
 - name: Clone dot-files
   git:
-    repo: git@github.com:orltom/linux-user-configs.git
-    dest: "{{ home_directory }}/repositories/configs"
+    repo: git@github.com:orltom/dotfiles.git
+    dest: "{{ home_directory }}/repositories/dotfiles"
     refspec: +refs/pull/*:refs/heads/*
     version: master
   when: not dot_files_directory.stat.exists
@@ -32,7 +32,7 @@
 
 - name: Add config links
   file:
-    src: "{{ home_directory }}/repositories/configs/{{ item }}"
+    src: "{{ home_directory }}/repositories/dotfiles/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
     owner: "{{ username }}"
     group: "{{ unix_group }}"
@@ -53,16 +53,14 @@
 
 - name: Link folder
   file:
-    src: "{{ home_directory }}/repositories/configs/{{ item }}"
+    src: "{{ home_directory }}/repositories/dotfiles/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
     owner: "{{ username }}"
     group: "{{ unix_group }}"
     state: link
   loop:
-    - bin
     - fonts
     - .vim
-    - .mutt
   tags:
     - system
     - dotfiles
@@ -79,21 +77,17 @@
 
 - name: Add .config programm links
   file:
-    src: "{{ home_directory }}/repositories/configs/.config/{{ item }}"
+    src: "{{ home_directory }}/repositories/dotfiles/{{ item }}"
     dest: "{{ home_directory }}/.config/{{ item }}"
     owner: "{{ username }}"
     group: "{{ unix_group }}"
     state: link
   loop:
     - i3
-    - i3status
     - i3blocks
     - rofi
     - dunst
     - rofi
-    - Thunar
-    - qalculate
-    - remmina
     - ranger
     - fontconfig
     - xfce4
