@@ -20,7 +20,7 @@
 
 - name: Link settings file from dot folder
   file:
-    src: "{{ home_directory }}/repositories/configs/.config/code/user/settings.json"
+    src: "{{ home_directory }}/repositories/dotfiles/code/user/settings.json"
     dest: "{{ home_directory }}/.config/Code - OSS/User/settings.json"
     owner: "{{ username }}"
     group: "{{ unix_group }}"
