@@ -16,4 +16,4 @@ jobs:
           group: "github"
           hosts: "localhost"
           requirements: requirements.yml
-          skiptags: "yay,dotfiles,permission,systemd"
+          skiptags: "yay,permission,systemd"
