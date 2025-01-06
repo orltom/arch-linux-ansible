@@ -9,6 +9,9 @@ jobs:
       - name: checkout git repo
         uses: actions/checkout@v3
 
+      - name: Set environment variables
+        run: export "ENVIRONMENT=github"
+
       - name: ansible check with archlinux:latest
         uses: roles-ansible/check-ansible-archlinux-latest-action@master
         with:
@@ -16,4 +19,4 @@ jobs:
           group: "github"
           hosts: "localhost"
           requirements: requirements.yml
-          skiptags: "yay,permission,systemd"
+          skiptags: "yay,systemd"

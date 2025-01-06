@@ -25,6 +25,18 @@
       - htop
       - dmidecode
       - fzf
+      - acpid
+      - dbus
+      - avahi
+      - cups
+      - bluez
+      - bluez-utils
+      - openssh
+      - dhcpcd
+      - sudo
+      - fwupd
+      - udisks2
+      - lshw
   become: true
   tags:
     - system
@@ -60,7 +72,6 @@
   become: true
   tags:
     - system
-    - web
 
 - name: Install network tools
   package:
@@ -78,6 +89,8 @@
       - dialog
       - wpa_supplicant
       - iw
+      - ufw
+      - gufw
   become: true
   tags:
     - system
@@ -125,7 +138,6 @@
   tags:
     - yay
     - system
-    - sound
 
 - name: Install terminal tools
   pacman:
@@ -141,9 +153,54 @@
     src: "/usr/bin/galculator"
     dest: "/usr/bin/calculator"
     owner: "{{ username }}"
-    group: "{{ unix_group }}"
+    group: "{{ usergroup }}"
     state: link
   become: true
   tags:
     - system
-    - permission
+
+- name: Install docking station packages
+  pacman:
+    name:
+      - bolt
+  become: true
+  tags:
+    - system
+
+- name: Install sound packages
+  pacman:
+    name:
+      - pamixer
+      - pulseaudio
+      - pulseaudio-alsa
+      - alsa-utils
+      - pavucontrol
+  become: true
+  tags:
+    - system
+
+- name: Install printer driver and tools
+  command: yay -S --needed --noconfirm {{ item }}
+  with_items:
+    - hplip
+  tags:
+    - system
+    - yay
+
+- name: Adding user to group sys
+  user:
+    name: "{{ username }}"
+    groups: sys
+    append: true
+  become: true
+  tags:
+    - system
+
+- name: Adding user to group lp
+  user:
+    name: "{{ username }}"
+    groups: lp
+    append: true
+  become: true
+  tags:
+    - system

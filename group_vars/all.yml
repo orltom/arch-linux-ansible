@@ -1,8 +1,11 @@
 ---
-home_directory: ~/
+ansible_connection: local
+ansible_become: true
+ansible_become_method: sudo
+username: "{{ lookup('pipe', 'id --user --name') }}"
+usergroup: "{{ lookup('pipe', 'id --group --name') }}"
+home_directory: "{{ lookup('env', 'HOME') }}"
 intellij_dest: /opt/intellij
 openjdk_version: 21
 rustup_dest: /tmp/rustup.sh
-username:
-unix_group:
-dotfiles_repo: git@github.com:orltom/dotfiles.git
+dotfiles_repo: https://github.com/orltom/dotfiles.git

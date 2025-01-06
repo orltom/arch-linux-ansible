@@ -12,3 +12,31 @@
     name: ntpd
     enabled: true
     state: started
+
+- name: Enable acpid services
+  become: true
+  systemd:
+    name: acpid
+    enabled: true
+    state: started
+
+- name: Enable avahi-daemon services
+  become: true
+  systemd:
+    name: avahi-daemon
+    enabled: true
+    state: started
+
+- name: Enable cups services
+  become: true
+  systemd:
+    name: cups
+    enabled: true
+    state: started
+
+- name: Enable ufw services
+  become: true
+  systemd:
+    name: ufw
+    enabled: true
+    state: started

@@ -23,7 +23,7 @@
     src: "{{ home_directory }}/repositories/dotfiles/code/user/settings.json"
     dest: "{{ home_directory }}/.config/Code - OSS/User/settings.json"
     owner: "{{ username }}"
-    group: "{{ unix_group }}"
+    group: "{{ usergroup }}"
     state: link
   tags:
     - ide

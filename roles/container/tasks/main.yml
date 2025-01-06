@@ -35,7 +35,6 @@
     append: true
   tags:
     - container
-    - permission
 
 - name: Install container software from yay
   command: yay -S --needed --noconfirm {{ item }}
