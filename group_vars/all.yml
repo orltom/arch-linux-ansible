@@ -5,3 +5,4 @@ openjdk_version: 21
 rustup_dest: /tmp/rustup.sh
 username:
 unix_group:
+dotfiles_repo: git@github.com:orltom/dotfiles.git
