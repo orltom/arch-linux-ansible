@@ -83,7 +83,6 @@
   become: true
   tags:
     - wm
-    - permission
 
 - name: Copy .xintrc to home directroy
   copy:

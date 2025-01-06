@@ -3,7 +3,7 @@
 [![License](https://img.shields.io/github/license/orltom/arch-linux-ansible)](/LICENSE)
 
 # Automated Arch Linux Setup
-This ansible playbook automates my personal Arch Linux setup. All dotfiles are kept in an independent repository.
+This Ansible playbook automates the setup of my development machine running Arch Linux.
 
 ## Prerequisites
 The following packages need to be installed.
@@ -20,11 +20,10 @@ The following packages need to be installed.
 ## Additional Information
 * [Arch Linux Installation Guide](https://wiki.archlinux.org/title/installation_guide)
 * [Disk encryption](https://github.com/id101010/ansible-archlinux/blob/main/doc/INSTALL_EFI.md)
+* [Mount an encrypted drive](https://necromuralist.github.io/posts/mount-an-encrypted-drive-using-cryptsetup/)
 
 ## Contributing
 Please use the GitHub issue tracker to submit bugs or request features.
 
 ## Disclaimer
-Copyright Orlando Tomás.
-
-Distributed under the terms of the MIT license, tool is free and open source software.
+This project is licensed under the MIT License. See the LICENSE file for more details.

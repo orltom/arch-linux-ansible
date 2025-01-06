@@ -4,7 +4,6 @@
     path: "{{ home_directory }}/repositories/dotfiles"
   register: dot_files_directory
   tags:
-    - system
     - dotfiles
 
 - name: Clone dot-files
@@ -12,10 +11,9 @@
     repo: "{{ dotfiles_repo }}"
     dest: "{{ home_directory }}/repositories/dotfiles"
     refspec: +refs/pull/*:refs/heads/*
-    version: master
+    version: main
   when: not dot_files_directory.stat.exists
   tags:
-    - system
     - dotfiles
 
 - name: Remove links
@@ -26,8 +24,8 @@
     - .vimrc
     - .bashrc
     - .zshrc
+    - .gitconfig
   tags:
-    - system
     - dotfiles
 
 - name: Add config links
@@ -35,7 +33,7 @@
     src: "{{ home_directory }}/repositories/dotfiles/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
     owner: "{{ username }}"
-    group: "{{ unix_group }}"
+    group: "{{ usergroup }}"
     state: link
   loop:
     - .vimrc
@@ -47,24 +45,19 @@
     - .xintrc
     - .bashrc
   tags:
-    - system
     - dotfiles
-    - permission
 
 - name: Link folder
   file:
     src: "{{ home_directory }}/repositories/dotfiles/{{ item }}"
     dest: "{{ home_directory }}/{{ item }}"
     owner: "{{ username }}"
-    group: "{{ unix_group }}"
+    group: "{{ usergroup }}"
     state: link
   loop:
-    - fonts
     - .vim
   tags:
-    - system
     - dotfiles
-    - permission
 
 - name: Create .config directory if it does not exist
   file:
@@ -72,7 +65,6 @@
     state: directory
     mode: "0750"
   tags:
-    - system
     - dotfiles
 
 - name: Add .config programm links
@@ -80,27 +72,23 @@
     src: "{{ home_directory }}/repositories/dotfiles/{{ item }}"
     dest: "{{ home_directory }}/.config/{{ item }}"
     owner: "{{ username }}"
-    group: "{{ unix_group }}"
+    group: "{{ usergroup }}"
     state: link
   loop:
     - i3
     - i3blocks
     - rofi
     - dunst
-    - rofi
     - ranger
     - fontconfig
     - xfce4
   tags:
-    - system
     - dotfiles
-    - permission
 
 - name: Set gnome terimal without menu bar
   command: gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
   when: not dot_files_directory.stat.exists
   tags:
-    - system
     - dotfiles
 
 - name: Check if vim themes
@@ -108,7 +96,6 @@
     path: "{{ home_directory }}/.vim/pack/themes/start"
   register: vim_theme_path
   tags:
-    - system
     - dotfiles
 
 - name: Create vim themes
@@ -117,7 +104,6 @@
     state: directory
     mode: "0750"
   tags:
-    - system
     - dotfiles
 
 - name: Clone vim dracula
@@ -128,5 +114,4 @@
     version: master
   when: not vim_theme_path.stat.exists
   tags:
-    - system
     - dotfiles
