@@ -37,6 +37,8 @@
       - fwupd
       - udisks2
       - lshw
+      - rsync
+      - brightnessctl
   become: true
   tags:
     - system
