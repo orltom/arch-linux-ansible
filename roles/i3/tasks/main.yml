@@ -10,11 +10,18 @@
       - i3status
       - i3blocks
       - upower
-      - xautolock
       - xsettingsd
   become: true
   tags:
     - wm
+
+- name: Install window manager tools
+  command: yay -S --needed --noconfirm {{ item }}
+  with_items:
+    - xautolock
+  tags:
+    - wm
+    - yay
 
 - name: Install lightdm
   pacman:
