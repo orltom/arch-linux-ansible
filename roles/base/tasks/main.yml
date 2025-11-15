@@ -85,7 +85,6 @@
       - remmina
       - wireshark-qt
       - tcpdump
-      - gnu-netcat
       - iftop
       - iwd
       - dialog
@@ -102,6 +101,15 @@
   command: yay -S --needed --noconfirm {{ item }}
   with_items:
     - aur/openvpn-update-systemd-resolved
+  tags:
+    - system
+    - network
+    - yay
+
+- name: Install network tools via yay
+  command: yay -S --needed --noconfirm {{ item }}
+  with_items:
+    - gnu-netcat
   tags:
     - system
     - network
