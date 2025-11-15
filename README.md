@@ -5,6 +5,7 @@
 # Automated Arch Linux Setup
 This Ansible playbook automates the setup of my development machine running Arch Linux.
 
+
 ## Prerequisites
 The following packages need to be installed.
 * Install [python](https://wiki.archlinux.org/title/python)
