@@ -34,6 +34,13 @@
     enabled: true
     state: started
 
+- name: Enable NetworkManager services
+  become: true
+  systemd:
+    name: NetworkManager
+    enabled: true
+    state: started
+
 - name: Enable ufw services
   become: true
   systemd:
