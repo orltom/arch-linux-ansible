@@ -40,9 +40,7 @@
     - .bashrc
     - .zshrc
     - .aliases
-    - .Xresources
     - .zshenv
-    - .xintrc
     - .bashrc
   tags:
     - dotfiles
@@ -75,19 +73,12 @@
     group: "{{ usergroup }}"
     state: link
   loop:
-    - i3
-    - i3blocks
-    - rofi
+    - wofi
+    - waybar
+    - code
+    - hypr
     - dunst
-    - ranger
     - fontconfig
-    - xfce4
-  tags:
-    - dotfiles
-
-- name: Set gnome terimal without menu bar
-  command: gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
-  when: not dot_files_directory.stat.exists
   tags:
     - dotfiles
 

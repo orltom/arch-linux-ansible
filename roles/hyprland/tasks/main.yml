@@ -1,0 +1,125 @@
+---
+- name: Install hyprland
+  pacman:
+    name:
+      - waybar
+      - grim
+      - slurp
+      - wl-clipboard
+      - swappy
+      - xdg-desktop-portal-wlr
+      - hyprland
+      - wayland
+      - wayland-utils
+      - wayland-protocols
+      - jsoncpp
+      - spdlog
+  become: true
+  tags:
+    - wm
+
+- name: Install window manager tools
+  pacman:
+    name:
+      - hyprlock
+      - hypridle
+  become: true
+  tags:
+    - wm
+
+- name: Enable idle service
+  service:
+    name: hypridle
+    enabled: true
+  become: true
+  tags:
+    - wm
+    - systemd
+
+- name: Install login manager
+  pacman:
+    name:
+      - greetd
+      - greetd-tuigreet
+  become: true
+  tags:
+    - wm
+
+- name: Enable login manager service
+  service:
+    name: greetd
+    enabled: true
+  become: true
+  tags:
+    - wm
+    - systemd
+
+- name: Install uitlity tools
+  pacman:
+    name:
+      - wofi
+      - mako
+      - papirus-icon-theme
+      - pipewire
+      - pipewire-pulse
+      - pipewire-alsa
+      - pipewire-jack
+      - wireplumber
+      - pavucontrol
+      - xdg-desktop-portal-hyprland
+      - thunar
+      - thunar-archive-plugin
+      - xarchiver
+      - qalculate-gtk
+      - wlr-randr
+  become: true
+  tags:
+    - wm
+
+- name: Install clipboard tools
+  command: yay -S --needed --noconfirm {{ item }}
+  with_items:
+    - wdisplays
+  tags:
+    - wm
+    - yay
+
+- name: Install clipboard tools
+  command: yay -S --needed --noconfirm {{ item }}
+  with_items:
+    - clipse
+  tags:
+    - wm
+    - yay
+
+- name: Install terminal
+  pacman:
+    name:
+      - kitty
+  become: true
+  tags:
+    - wm
+
+- name: Install fonts
+  pacman:
+    name:
+      - ttf-jetbrains-mono
+      - cantarell-fonts
+      - gnu-free-fonts
+      - ttf-dejavu
+      - noto-fonts
+  become: true
+  tags:
+    - wm
+
+- name: Adding existing user to some multimedia unix groups
+  user:
+    name: "{{ username }}"
+    groups:
+      - power
+      - audio
+      - storage
+    append: true
+  become: true
+  tags:
+    - wm
